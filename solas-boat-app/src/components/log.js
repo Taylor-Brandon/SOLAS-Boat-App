@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 function Sign({ loggedIn, setLoggedIn }) {
   const [userName, setUserName] = useState('');
@@ -38,7 +38,10 @@ function Sign({ loggedIn, setLoggedIn }) {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+    if (!userName || !password) {
+      alert('Please fill in all required fields.');
+      return;
+    }
     try {
       const response = await mockAuthenticate();
 
