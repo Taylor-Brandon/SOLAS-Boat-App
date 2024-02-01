@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Log() {
+function Home() {
     return(
         <h1>Logged In</h1>
     );
 }
 
-export default Log;
+export default Home;

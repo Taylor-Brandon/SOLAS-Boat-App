@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Sign from './components/sign';
 
  function App() {
-  return <Sign />;
+  const[loggedIn, setLoggedIn] =useState(false);
+  return <Sign loggedIn={loggedIn} setLoggedIn={setLoggedIn} />;
 }
 
 export default App;
