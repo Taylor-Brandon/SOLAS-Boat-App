@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import Home from './home';
-
 
 function Sign({ loggedIn, setLoggedIn }) {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
   const [error, setError] = useState('');
-
 
   const navigate = useNavigate(); 
   const mockAuthenticate = async () => {
@@ -62,14 +59,13 @@ function Sign({ loggedIn, setLoggedIn }) {
   return (
     <div>
       {loggedIn ? (
-        <Navigate to="/home" /> // Redirect to home if already logged in
+        <Navigate to="/home" /> 
       ) : (
         <>
           <p>
             {error && <span style={{ color: 'red' }}>{error}</span>}
           </p>
           <form className='form'>
-            {/* Other input fields */}
             <input
               value={userName}
               name="userName"
@@ -84,7 +80,6 @@ function Sign({ loggedIn, setLoggedIn }) {
               type="password"
               placeholder='Password'
             />
-            {/* Other input fields */}
             <button type="button" onClick={handleFormSubmit}>
               Submit
             </button>

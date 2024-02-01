@@ -10,7 +10,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        
         <Route path="/" element={<Navigate to="/signup" />} />
         <Route path="/signup" element={<Sign setLoggedIn={setLoggedIn} />} />
         <Route path="/login" element={<Log setLoggedIn={setLoggedIn} />} />
