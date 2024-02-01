@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Home from './home';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import Log from './log';
+
 
 function Sign({ loggedIn, setLoggedIn }) {
     const [firstName, setFirstName] = useState('');
@@ -9,8 +11,10 @@ function Sign({ loggedIn, setLoggedIn }) {
     const [password, setPassword] = useState('');
     const [isAdmin, setIsAdmin] = useState(false);
 
+    const navigate = useNavigate(); 
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
+
 
         if (type === 'checkbox') {
             setIsAdmin(checked);
@@ -43,13 +47,14 @@ function Sign({ loggedIn, setLoggedIn }) {
         setPassword('');
         setIsAdmin(false);
         setLoggedIn(true);
+        navigate('/home'); 
     };
 
     return (
         <div>
           {loggedIn ? (
-            <Home />
-          ) : (
+        <Navigate to="/home" /> // Redirect to home if already logged in
+      ) : (
             <>
               <p>
                 Hello {firstName} {lastName}
@@ -93,6 +98,9 @@ function Sign({ loggedIn, setLoggedIn }) {
               Submit
             </button>
           </form>
+          <p>
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
         </>
       )}
     </div>
