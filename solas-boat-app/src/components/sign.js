@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import '../styles/sign.css';
 
 function Sign({ loggedIn, setLoggedIn }) {
   const [firstName, setFirstName] = useState('');
@@ -50,50 +51,74 @@ function Sign({ loggedIn, setLoggedIn }) {
     navigate('/home');
   };
   return (
-    <div>
+    <div className='container'>
       {loggedIn ? (
         <Navigate to="/home" />
       ) : (
         <>
-          <p>
+          <p id='hello'>
             Hello {firstName} {lastName}
           </p>
           <form className='form'>
-            <input
-              value={firstName}
-              name="firstName"
-              onChange={handleInputChange}
-              type="text"
-              placeholder='First Name'
-            />
-            <input
-              value={lastName}
-              name="lastName"
-              onChange={handleInputChange}
-              type="text"
-              placeholder='Last Name'
-            />
-            <input
-              value={userName}
-              name="userName"
-              onChange={handleInputChange}
-              type="text"
-              placeholder='Username'
-            />
-            <input
-              value={password}
-              name="password"
-              onChange={handleInputChange}
-              type="text"
-              placeholder='Password'
-            />
-            <input
-              checked={isAdmin}
-              name="isAdmin"
-              type="checkbox"
-              onChange={handleInputChange}
-            />
-            <button type="button" onClick={handleFormSubmit}>
+            <div className='form-floating'>
+              <input
+                className='form-control'
+                value={firstName}
+                name="firstName"
+                onChange={handleInputChange}
+                type="text"
+                placeholder='First Name'
+              />
+              <label
+                for='firstName'
+                className='form-label'>First Name</label>
+            </div>
+            <div className='form-floating'>
+              <input className='form-control'
+                value={lastName}
+                name="lastName"
+                onChange={handleInputChange}
+                type="text"
+                placeholder='Last Name'
+              />
+              <label
+                for='lastName'
+                className='form-label'>Last Name</label>
+            </div>
+            <div className='form-floating'>
+              <input className='form-control'
+                value={userName}
+                name="userName"
+                onChange={handleInputChange}
+                type="text"
+                placeholder='Username'
+              />
+              <label
+                for='userName'
+                className='form-label'>Username</label>
+            </div>
+            <div className='form-floating'>
+              <input className='form-control'
+                value={password}
+                name="password"
+                onChange={handleInputChange}
+                type="text"
+                placeholder='Password'
+              />
+              <label
+                for='username'
+                className='form-label'>Password</label>
+            </div>
+            <div className='form-check form-switch'>
+              <label className='form-check-label'>Admin</label>
+              <input className='form-check-input'
+                checked={isAdmin}
+                name="isAdmin"
+                type="checkbox"
+                onChange={handleInputChange}
+              />
+            </div>
+            <button className='btn btn-primary' type="button" onClick={handleFormSubmit}>
               Submit
             </button>
           </form>

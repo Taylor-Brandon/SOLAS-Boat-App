@@ -1,0 +1,14 @@
+body {
+    background: linear-gradient(to right, #8db7f2, #4283ec);
+    font-family: 'Comfortaa', sans-serif;
+}
+
+#hello{
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: 20px;
+}
+
+
