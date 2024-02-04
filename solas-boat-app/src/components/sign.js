@@ -56,10 +56,11 @@ function Sign({ loggedIn, setLoggedIn }) {
         <Navigate to="/home" />
       ) : (
         <>
+        <h1 className='header p-4'>Please Sign Up!</h1>
           <p id='hello'>
             Hello {firstName} {lastName}
           </p>
-          <form className='form'>
+          <form className='form p-2'>
             <div className='form-floating'>
               <input
                 className='form-control'
