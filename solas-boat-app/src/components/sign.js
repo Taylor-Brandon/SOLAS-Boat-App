@@ -103,7 +103,7 @@ function Sign({ loggedIn, setLoggedIn }) {
                 value={password}
                 name="password"
                 onChange={handleInputChange}
-                type="text"
+                type="password"
                 placeholder='Password'
               />
               <label
