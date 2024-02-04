@@ -1,0 +1,39 @@
+body {
+    background: linear-gradient(to right, #8db7f2, #4283ec);
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h1{
+    font-family: 'Comfortaa', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.header{
+    color: white;
+}
+
+#hello{
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    font-weight: 20px;
+}
+
+
+.form{
+    width: 50%;
+    margin-left: 330px;
+    background-color: white;
+    border: 3px solid rgb(83, 83, 250);
+    border-radius: 20px;
+}
+
+.form-control{
+    margin-top: 20px;
+}
+p{
+    text-align: center;
+}
