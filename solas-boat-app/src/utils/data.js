@@ -1,6 +1,3 @@
-import React from 'react';
-import Home from '../components/home';
-
 const boats = [
     {
         ship: "ABLE",
@@ -19,8 +16,4 @@ const boats = [
     }
 ];
 
-    function Data() {
-        return <Home boats={boats} />
-    }
-
-    export default Data;
+export default boats;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sign from './components/sign';
 import Home from './components/home';
 import Log from './components/log';
+import Results from './components/results';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/signup" element={<Sign setLoggedIn={setLoggedIn} />} />
         <Route path="/login" element={<Log setLoggedIn={setLoggedIn} />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/results" element={<Results />} />
       </Routes>
     </Router>
   );
