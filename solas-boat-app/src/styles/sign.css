@@ -26,9 +26,8 @@ h1{
 .form{
     width: 50%;
     margin-left: 330px;
-    background-color: white;
-    border: 3px solid rgb(83, 83, 250);
-    border-radius: 20px;
+   
+   
 }
 
 .form-control{

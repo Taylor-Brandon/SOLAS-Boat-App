@@ -1,0 +1,18 @@
+body{
+        background: linear-gradient(to right, #8db7f2, #4283ec);
+        font-family: 'Comfortaa', sans-serif;
+}
+h1{
+    padding: 20px;
+}
+.header{
+    color: white;
+}
+form{
+    margin-left: 900px;
+    width: 50%;
+}
+.btn{
+    margin-left: 400px;
+    margin-top: 15px;
+}

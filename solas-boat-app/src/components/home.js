@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import boats from '../utils/data';
 import Results from '../components/results';
+import "../styles/home.css";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,17 +25,17 @@ const Home = () => {
   
   return (
     <div>
-      <h1>Home Page</h1>
-      <form onSubmit={handleSearch}>
-        <label>
-          Search:
+      <h1 className='header'>Search</h1>
+      <form className='form' onSubmit={handleSearch}>
+        <div className='form-floating'>
           <input
+          className='form-control'
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </label>
-        <button type="submit">Search</button>
+        <button className='btn btn-primary' type="submit">Search</button>
+        </div>
       </form>
       <Results searchResult={searchResult} />
     </div>
