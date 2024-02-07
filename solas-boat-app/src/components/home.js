@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 import boats from '../utils/data';
 import Results from '../components/results';
-import "../styles/home.css";
+import '../styles/home.css';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,6 +22,7 @@ const Home = () => {
       setSearchResult([]);
     }
   };
+
   
   return (
     <div>
@@ -38,6 +39,9 @@ const Home = () => {
         </div>
       </form>
       <Results searchResult={searchResult} />
+  <Link className='logLink' to="/">Logout</Link>
+
+
     </div>
   );
 };
