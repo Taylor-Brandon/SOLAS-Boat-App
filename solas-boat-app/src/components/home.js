@@ -34,7 +34,7 @@ const Home = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        <button className='btn btn-primary' type="submit">Search</button>
+        <button className='btn btn-primary mx-auto' type="submit">Search</button>
         </div>
       </form>
       <Results searchResult={searchResult} />

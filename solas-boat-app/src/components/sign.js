@@ -7,33 +7,30 @@ function Sign({ loggedIn, setLoggedIn }) {
   const [lastName, setLastName] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
+  
 
   const navigate = useNavigate();
   const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    if (type === 'checkbox') {
-      setIsAdmin(checked);
-    } else {
-      switch (name) {
-        case 'firstName':
-          setFirstName(value);
-          break;
-        case 'lastName':
-          setLastName(value);
-          break;
-        case 'userName':
-          setUserName(value);
-          break;
-        case 'password':
-          setPassword(value);
-          break;
-        default:
-          break;
-      }
+    const { name, value } = e.target;
+  
+    switch (name) {
+      case 'firstName':
+        setFirstName(value);
+        break;
+      case 'lastName':
+        setLastName(value);
+        break;
+      case 'userName':
+        setUserName(value);
+        break;
+      case 'password':
+        setPassword(value);
+        break;
+      default:
+        break;
     }
   };
+  
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +43,6 @@ function Sign({ loggedIn, setLoggedIn }) {
     setLastName('');
     setUserName('');
     setPassword('');
-    setIsAdmin(false);
     setLoggedIn(true);
     navigate('/home');
   };
@@ -56,7 +52,7 @@ function Sign({ loggedIn, setLoggedIn }) {
         <Navigate to="/home" />
       ) : (
         <>
-        <h1 className='header p-4'>Please Sign Up!</h1>
+        <h2 className='header p-4'>Please Sign Up!</h2>
           <p id='hello'>
             Hello {firstName} {lastName}
           </p>
@@ -91,13 +87,14 @@ function Sign({ loggedIn, setLoggedIn }) {
                 value={userName}
                 name="userName"
                 onChange={handleInputChange}
-                type="text"
+                type="username"
                 placeholder='Username'
               />
               <label
-                for='userName'
-                className='form-label'>Username</label>
+                for='username'
+                className='form-label'>UserName</label>
             </div>
+
             <div className='form-floating'>
               <input className='form-control'
                 value={password}
@@ -107,24 +104,15 @@ function Sign({ loggedIn, setLoggedIn }) {
                 placeholder='Password'
               />
               <label
-                for='username'
+                for='password'
                 className='form-label'>Password</label>
             </div>
-            <div className='form-check form-switch'>
-              <label className='form-check-label'>Admin</label>
-              <input className='form-check-input'
-                checked={isAdmin}
-                name="isAdmin"
-                type="checkbox"
-                onChange={handleInputChange}
-              />
-            </div>
-            <button className='btn btn-primary' type="button" onClick={handleFormSubmit}>
+            <button className='btn btn-warning mx-auto' type="button" onClick={handleFormSubmit}>
               Submit
             </button>
           </form>
           <p>
-            Already have an account? <Link to="/login">Login</Link>
+            Already have an account? <Link className='link link-warning' to="/login">Login</Link>
           </p>
         </>
       )}
