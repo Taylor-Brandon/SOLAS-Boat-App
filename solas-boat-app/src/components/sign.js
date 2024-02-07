@@ -56,7 +56,7 @@ function Sign({ loggedIn, setLoggedIn }) {
           <p id='hello'>
             Hello {firstName} {lastName}
           </p>
-          <form className='form p-2'>
+          <form className='form w-50 p-2'>
             <div className='form-floating'>
               <input
                 className='form-control'

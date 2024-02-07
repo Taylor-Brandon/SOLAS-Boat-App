@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
+import '../styles/log.css';
 
 function Sign({ loggedIn, setLoggedIn }) {
   const [userName, setUserName] = useState('');
@@ -68,22 +69,31 @@ function Sign({ loggedIn, setLoggedIn }) {
           <p>
             {error && <span style={{ color: 'red' }}>{error}</span>}
           </p>
-          <form className='form'>
+          <h2 className='header'>Login</h2>
+          <form className='form w-25 p-2'>
+            <div className='form-floating'>
             <input
+            className='form-control'
               value={userName}
               name="userName"
               onChange={handleInputChange}
               type="text"
               placeholder='Username'
             />
+            <label className='form-label' for='userName'>Username</label>
+            </div>
+            <div className='form-floating'>
             <input
+            className='form-control'
               value={password}
               name="password"
               onChange={handleInputChange}
               type="password"
               placeholder='Password'
             />
-            <button type="button" onClick={handleFormSubmit}>
+            <label className='form-label' for='password'>Password</label>
+            </div>
+            <button className='btn btn-warning' type="button" onClick={handleFormSubmit}>
               Submit
             </button>
           </form>

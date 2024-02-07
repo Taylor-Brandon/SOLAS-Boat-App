@@ -29,8 +29,8 @@ h2 {
 
 .form {
     margin: 0 auto; 
-    width: 50%;
     border-radius: 20px;
+    font-family: 'Gowun Batang', serif;
     transition: all 1s ease-out;
 }
 
@@ -46,9 +46,10 @@ h2 {
 
 p {
     text-align: center;
+    font-family: 'Gowun Batang', serif;
     color: white;
 }
 
 .form:hover {
-    box-shadow: 0 0 40px gold /* Use predefined color name directly */
+    box-shadow: 0 0 40px gold 
 }
