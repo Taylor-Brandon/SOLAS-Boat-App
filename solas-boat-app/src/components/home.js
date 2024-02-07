@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import boats from '../utils/data';
 import Results from '../components/results';
+
 import '../styles/home.css';
 
 const Home = () => {
@@ -40,6 +41,7 @@ const Home = () => {
       </form>
       <Results searchResult={searchResult} />
   <Link className='logLink' to="/">Logout</Link>
+  <Link className='profileLink' to="/profile">Profile</Link>
 
 
     </div>

@@ -6,5 +6,15 @@
     padding: 10px;
     background-color: #ffc107;;
    font-family: 'Gowun Batang', serif;
+   margin: 10px;
+  }
+  .profileLink{
+    text-decoration: none !important;
+    color: black !important;
+    border: 2px solid #ffc107;;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #ffc107;;
+   font-family: 'Gowun Batang', serif;
   }
   
