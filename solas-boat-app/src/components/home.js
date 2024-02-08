@@ -5,7 +5,7 @@ import boats from '../utils/data';
 
 import '../styles/home.css';
 
-const Home = () => {
+const Home = ({ firstName, lastName }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const navigate = useNavigate(); 
@@ -40,7 +40,7 @@ const Home = () => {
         </div>
       </form>
   <Link className='logLink' to="/">Logout</Link>
-  <Link className='profileLink' to="/profile">Profile</Link>
+  <Link className='profileLink' to="/profile">{firstName} {lastName}</Link>
 
 
     </div>
