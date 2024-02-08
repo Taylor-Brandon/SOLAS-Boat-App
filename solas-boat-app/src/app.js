@@ -20,6 +20,7 @@ function App() {
         <Route path="/home" element={<Home firstName={firstName} lastName={lastName} />} />
         <Route path="/results" element={<Results />} />
         <Route path="/profile" element={<Profile firstName={firstName} lastName={lastName} />} />
+        <Route path="/pdf" element={<profile />} />
       </Routes>
     </Router>
   );
