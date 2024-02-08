@@ -10,7 +10,6 @@ function Profile({ firstName, lastName }) {
     return(
         <div>
             <h1>Welcome {firstName} {lastName}</h1>
-            <Link className='searchLink' to='/home'>Home</Link>
             <Link className='logOut' to='/'>Logout</Link>
             <Navigation />
             

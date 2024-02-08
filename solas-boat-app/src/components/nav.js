@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
     return (
@@ -22,10 +23,16 @@ function Navigation() {
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li className="nav-item">
-                                    <h1 className="nav-link active" aria-current="page">Home</h1>
+                                <Link className='searchLink' to='/home'>Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <h1 className="nav-link">Link</h1>
+                                    <Link className='pdfLink' to='/pdf'>PDF</Link>
+                                </li>
+                                <li>
+                                    <button className='btn btn-warning'>Add Data</button>
+                                </li>
+                                <li>
+                                    <button className='btn btn-warning'>Adjust Roles</button>
                                 </li>
                             </ul>
                         </div>
