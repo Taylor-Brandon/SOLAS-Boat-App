@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navigation from '../components/nav';
+import 'bootstrap/dist/css/bootstrap.min.css';  
+
 
 
 
 function Profile({ firstName, lastName }) {
-    console.log('Received props:', firstName, lastName);
     return(
         <div>
-            <h1>Welcome {firstName} {lastName} !</h1>
-    <Link className='logLink' to="/">Logout</Link>
-    <Link className='searchLink' to="/home">Search</Link>
+            <h1>Welcome {firstName} {lastName}</h1>
+            <Link className='searchLink' to='/home'>Home</Link>
+            <Link className='logOut' to='/'>Logout</Link>
+            <Navigation />
+            
+        </div>
     
-    </div>
-    );
+    )
 }
 
 export default Profile;
