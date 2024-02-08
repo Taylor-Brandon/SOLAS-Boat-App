@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import boats from '../utils/data';
-import Results from '../components/results';
+
 
 import '../styles/home.css';
 
@@ -27,8 +27,8 @@ const Home = () => {
   
   return (
     <div>
-      <h1 className='header'>Search</h1>
-      <form className='form' onSubmit={handleSearch}>
+      <h2 className='header'>Search</h2>
+      <form className='form p-2' onSubmit={handleSearch}>
         <div className='form-floating'>
           <input
           className='form-control'
@@ -39,7 +39,6 @@ const Home = () => {
         <button className='btn btn-warning mx-auto' type="submit">Search</button>
         </div>
       </form>
-      <Results searchResult={searchResult} />
   <Link className='logLink' to="/">Logout</Link>
   <Link className='profileLink' to="/profile">Profile</Link>
 
