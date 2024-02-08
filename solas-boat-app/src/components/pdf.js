@@ -27,9 +27,20 @@ function PDFViewer() {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (pdfFile !== null) {
-            setViewPdf(pdfFile)
+            // Save the PDF file to local storage
+            localStorage.setItem('pdfFile', pdfFile);
+            setViewPdf(pdfFile);
         } else {
             setViewPdf(null)
+        }
+    }
+    const handleRetrieveFromLocalStorage = () => {
+        // Retrieve the PDF file from local storage
+        const savedPdfFile = localStorage.getItem('pdfFile');
+        if (savedPdfFile) {
+            setViewPdf(savedPdfFile);
+        } else {
+            console.log("PDF file not found in local storage.");
         }
     }
 
@@ -81,12 +92,10 @@ function PDFViewer() {
                     {!viewPdf && <>No Pdf</>}
                 </Worker>
             </div>
+            <button onClick={handleRetrieveFromLocalStorage}>Retrieve PDF from Local Storage</button>
+
         </div>
     )
 }
 
 export default PDFViewer;
-
-
-
-
