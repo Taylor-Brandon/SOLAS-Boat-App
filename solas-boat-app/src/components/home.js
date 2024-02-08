@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom';
 import boats from '../utils/data';
-import Results from '../components/results';
+
+
+import '../styles/home.css';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,22 +23,26 @@ const Home = () => {
       setSearchResult([]);
     }
   };
+
   
   return (
     <div>
-      <h1>Home Page</h1>
-      <form onSubmit={handleSearch}>
-        <label>
-          Search:
+      <h2 className='header'>Search</h2>
+      <form className='form p-2' onSubmit={handleSearch}>
+        <div className='form-floating'>
           <input
+          className='form-control'
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </label>
-        <button type="submit">Search</button>
+        <button className='btn btn-warning mx-auto' type="submit">Search</button>
+        </div>
       </form>
-      <Results searchResult={searchResult} />
+  <Link className='logLink' to="/">Logout</Link>
+  <Link className='profileLink' to="/profile">Profile</Link>
+
+
     </div>
   );
 };

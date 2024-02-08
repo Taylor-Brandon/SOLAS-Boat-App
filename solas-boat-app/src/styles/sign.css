@@ -1,39 +1,55 @@
-body {
-    background: linear-gradient(to right, #8db7f2, #4283ec);
-    font-family: 'Comfortaa', sans-serif;
+:root {
+    --gold: rgba(142, 102, 3, 0.956);
+    --dark: black;
+    --grey: rgb(38, 36, 36);
 }
 
-h1{
-    font-family: 'Comfortaa', sans-serif;
+body {
+    background: linear-gradient(to right, var(--gold), var(--grey), var(--dark));
+    font-family: 'Gowun Batang', serif;
+}
+
+h2 {
+    font-family: 'Gowun Batang', serif;
     text-align: center;
     font-size: 30px;
     margin-top: 20px;
 }
 
-.header{
+.header {
     color: white;
 }
 
-#hello{
-    font-family: 'Comfortaa', sans-serif;
+#hello {
+    font-family: 'Gowun Batang', serif;
     font-size: 40px;
     color: white;
     text-align: center;
-    font-weight: 20px;
 }
 
-
-.form{
-    width: 50%;
-    margin-left: 330px;
-    background-color: white;
-    border: 3px solid rgb(83, 83, 250);
+.form {
+    margin: 0 auto; 
     border-radius: 20px;
+    font-family: 'Gowun Batang', serif;
+    transition: all 1s ease-out;
 }
 
-.form-control{
+.btn {
+    width: 250px;
+    border-radius: 50px;
+    margin-top: 15px;
+}
+
+.form-control {
     margin-top: 20px;
 }
-p{
+
+p {
     text-align: center;
+    font-family: 'Gowun Batang', serif;
+    color: white;
+}
+
+.form:hover {
+    box-shadow: 0 0 40px gold 
 }
