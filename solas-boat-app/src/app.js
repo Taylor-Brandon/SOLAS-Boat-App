@@ -4,6 +4,7 @@ import Home from './components/home';
 import Log from './components/log';
 import Results from './components/results';
 import Profile from './components/profile';
+import PDFViewer from './components/pdf';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="/home" element={<Home firstName={firstName} lastName={lastName} />} />
         <Route path="/results" element={<Results />} />
         <Route path="/profile" element={<Profile firstName={firstName} lastName={lastName} />} />
-        <Route path="/pdf" element={<profile />} />
+        <Route path="/pdf" element={<PDFViewer />} />
       </Routes>
     </Router>
   );
