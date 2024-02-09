@@ -1,0 +1,25 @@
+.navbar{
+    font-family: 'Gowun Batang', serif;
+}
+#homeLink{
+    text-decoration: none;
+    border: 10px solid #ffc107;
+    border-radius: 10px;
+    background-color: #ffc107;
+    color: black;
+   position: absolute;
+   margin-top: 120px;
+   width: 252px;
+   text-align: center;
+}
+#pdfLink{
+    text-decoration: none;
+    border: 10px solid #ffc107;
+    border-radius: 10px;
+    background-color: #ffc107;
+    color: black;
+    position: absolute;
+    margin-top: 180px;
+    width: 252px;
+    text-align: center;
+}
