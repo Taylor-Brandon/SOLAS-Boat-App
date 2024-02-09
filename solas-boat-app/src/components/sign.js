@@ -7,6 +7,7 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
   const [lastNameInput, setLastNameInput] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [isAdmin, setIsAdmin] = useState(false); // State to store admin status
 
   const navigate = useNavigate();
 
@@ -26,6 +27,9 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
       case 'password':
         setPassword(value);
         break;
+      case 'isAdmin':
+        setIsAdmin(value === 'true'); // Convert dropdown value to boolean
+        break;
       default:
         break;
     }
@@ -37,7 +41,7 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
       alert('Please fill in all required fields.');
       return;
     }
-    alert(`Hello ${firstNameInput} ${lastNameInput}`);
+    alert(`Hello ${firstNameInput} ${lastNameInput}. Admin: ${isAdmin ? 'Yes' : 'No'}`);
     setFirstName(firstNameInput);
     setLastName(lastNameInput);
     setLoggedIn(true);
@@ -55,6 +59,7 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
             Hello {firstNameInput} {lastNameInput}
           </p>
           <form className='form w-50 p-2' onSubmit={handleFormSubmit}>
+            {/* First Name Input */}
             <div className='form-floating'>
               <input
                 className='form-control'
@@ -64,51 +69,69 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
                 type="text"
                 placeholder='First Name'
               />
-              <label
-                htmlFor='firstName'
-                className='form-label'>First Name</label>
+              <label htmlFor='firstName' className='form-label'>First Name</label>
             </div>
+
+            {/* Last Name Input */}
             <div className='form-floating'>
-              <input className='form-control'
+              <input
+                className='form-control'
                 value={lastNameInput}
                 name="lastName"
                 onChange={handleInputChange}
                 type="text"
                 placeholder='Last Name'
               />
-              <label
-                htmlFor='lastName'
-                className='form-label'>Last Name</label>
+              <label htmlFor='lastName' className='form-label'>Last Name</label>
             </div>
+
+            {/* Username Input */}
             <div className='form-floating'>
-              <input className='form-control'
+              <input
+                className='form-control'
                 value={userName}
                 name="userName"
                 onChange={handleInputChange}
                 type="text"
                 placeholder='Username'
               />
-              <label
-                htmlFor='userName'
-                className='form-label'>Username</label>
+              <label htmlFor='userName' className='form-label'>Username</label>
             </div>
 
+            {/* Password Input */}
             <div className='form-floating'>
-              <input className='form-control'
+              <input
+                className='form-control'
                 value={password}
                 name="password"
                 onChange={handleInputChange}
                 type="password"
                 placeholder='Password'
               />
-              <label
-                htmlFor='password'
-                className='form-label'>Password</label>
+              <label htmlFor='password' className='form-label'>Password</label>
             </div>
+
+            {/* Admin Dropdown */}
+            <div id='dropdown' className='form-floating mt-3 w-50'>
+              <select
+                className='form-select'
+                value={isAdmin.toString()} // Convert boolean to string for value
+                name="isAdmin"
+                onChange={handleInputChange}
+              >
+                <option value="false">Not Admin</option>
+                <option value="true">Admin</option>
+              </select>
+              <label htmlFor='isAdmin' className='form-label'>Admin</label>
+            </div>
+
+            {/* Submit Button */}
             <button className='btn btn-warning mx-auto' type="submit">
               Submit
             </button>
           </form>
+
+          {/* Login Link */}
           <p>
             Already have an account? <Link className='link link-warning' to="/login">Login</Link>
           </p>
@@ -119,3 +142,6 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
 }
 
 export default Sign;
+
+
+
