@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
+import '../styles/pdf.css';
 
 function PDFViewer() {
     const [pdfFile, setPdfFile] = useState(null);
@@ -47,7 +48,7 @@ function PDFViewer() {
     // Custom layout
     const customLayout = {
         render(props) {
-            const { doc, rotation } = props;
+            
             return (
                 <div>
                     <div
@@ -92,7 +93,7 @@ function PDFViewer() {
                     {!viewPdf && <>No Pdf</>}
                 </Worker>
             </div>
-            <button onClick={handleRetrieveFromLocalStorage}>Retrieve PDF from Local Storage</button>
+            <button id='localStorageBtn' className='btn btn-warning' onClick={handleRetrieveFromLocalStorage}>Retrieve PDF from Local Storage</button>
 
         </div>
     )
