@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Profile({ firstName, lastName }) {
     return(
-        <div>
+        <div className='bg-image'>
             <h1 className='welcomeProfile'>Welcome {firstName} {lastName}</h1>
             <Link className='logOut' to='/'>Logout</Link>
             <Navigation />
