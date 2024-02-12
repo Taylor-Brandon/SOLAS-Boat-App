@@ -11,16 +11,17 @@ function App() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Sign setLoggedIn={setLoggedIn} setFirstName={setFirstName} setLastName={setLastName} />} />
+      <Route path="/" element={<Sign setLoggedIn={setLoggedIn} setFirstName={setFirstName} setLastName={setLastName} setIsAdmin={setIsAdmin} />} />
         <Route path="/signup" element={<Sign setLoggedIn={setLoggedIn} />} />
         <Route path="/login" element={<Log setLoggedIn={setLoggedIn} />} />
         <Route path="/home" element={<Home firstName={firstName} lastName={lastName} />} />
         <Route path="/results" element={<Results />} />
-        <Route path="/profile" element={<Profile firstName={firstName} lastName={lastName} />} />
+        <Route path="/profile" element={<Profile firstName={firstName} lastName={lastName} isAdmin={isAdmin} />} />
         <Route path="/pdf" element={<PDFViewer />} />
       </Routes>
     </Router>

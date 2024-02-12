@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import '../styles/sign.css';
 
-function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
+function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin }) {
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [admin, setAdmin] = useState(false);
 
   const navigate = useNavigate();
 
@@ -30,7 +31,9 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
         break;
     }
   };
-
+const handleDropDownChange = (e) => {
+  setAdmin(e.target.value);
+}
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!firstNameInput || !lastNameInput || !userName || !password) {
@@ -41,6 +44,7 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
     setFirstName(firstNameInput);
     setLastName(lastNameInput);
     setLoggedIn(true);
+    setIsAdmin(true);
     navigate('/home');
   };
 
@@ -105,10 +109,32 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName }) {
                 htmlFor='password'
                 className='form-label'>Password</label>
             </div>
-            <button className='btn btn-warning mx-auto' type="submit">
+            <div id='dropdown' className='form-floating mt-3 w-50'>
+              <select
+                className='form-select'
+                value={admin}
+                name="admin"
+                onChange={handleDropDownChange}
+              >
+                <option value="">Select Admin Status</option>
+                <option value="true">Admin</option>
+                <option value="false">Not Admin</option>
+              </select>
+              <label htmlFor='admin' className='form-label'>Admin</label>
+              </div>
+
+
+
+
+            <button className="btn btn-warning mx-auto" type="submit">
               Submit
             </button>
+
+
+
           </form>
+
+
           <p>
             Already have an account? <Link className='link link-warning' to="/login">Login</Link>
           </p>
