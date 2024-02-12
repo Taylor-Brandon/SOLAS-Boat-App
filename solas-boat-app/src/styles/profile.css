@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -15,26 +15,26 @@
 .navbar-toggler {
     position: fixed; /* Set to fixed to position it relative to the viewport */
     top: 10px;
+    left: 10px; /* Adjust the positioning as needed */
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
-
-.welcomeProfile{
+.welcomeProfile {
     font-family: 'Gowun Batang', serif;
-    background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 80%;
-  padding: 20px;
-  text-align: center;
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
 }
 
-.logOut{
+.logOut {
     text-decoration: none;
     border: 10px solid #ffc107;
     border-radius: 10px;
@@ -46,8 +46,9 @@
     font-family: 'Gowun Batang', serif;
 }
 
-.adminRole{
-    margin-left: 100px;
+.adminRole {
+    /* Adjust the margin or remove it if not needed */
+    /* margin-left: 100px; */
     font-family: 'Gowun Batang', serif;
     color: orange;
 }

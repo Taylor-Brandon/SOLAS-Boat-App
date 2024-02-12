@@ -122,10 +122,19 @@ const handleDropDownChange = (e) => {
               </select>
               <label htmlFor='admin' className='form-label'>Admin</label>
               </div>
-            <button className='btn btn-warning mx-auto' type="submit">
+
+
+
+
+            <button className="btn btn-warning mx-auto" type="submit">
               Submit
             </button>
+
+
+
           </form>
+
+
           <p>
             Already have an account? <Link className='link link-warning' to="/login">Login</Link>
           </p>
