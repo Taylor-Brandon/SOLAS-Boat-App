@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 import '../styles/sign.css';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin }) {
   const [firstNameInput, setFirstNameInput] = useState('');
@@ -8,8 +10,11 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin }) 
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [admin, setAdmin] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
+  const handleClose = () => setShowModal(false);
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,21 +36,19 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin }) 
         break;
     }
   };
-const handleDropDownChange = (e) => {
-  setAdmin(e.target.value);
-}
+
+  const handleDropDownChange = (e) => {
+    setAdmin(e.target.value);
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!firstNameInput || !lastNameInput || !userName || !password) {
       alert('Please fill in all required fields.');
       return;
     }
-    alert(`Hello ${firstNameInput} ${lastNameInput}`);
-    setFirstName(firstNameInput);
-    setLastName(lastNameInput);
-    setLoggedIn(true);
-    setIsAdmin(true);
-    navigate('/home');
+    // Show the modal
+    setShowModal(true);
   };
 
   return (
@@ -55,9 +58,6 @@ const handleDropDownChange = (e) => {
       ) : (
         <>
           <h2 className='header p-4'>Please Sign Up!</h2>
-          <p id='hello'>
-            Hello {firstNameInput} {lastNameInput}
-          </p>
           <form className='form w-50 p-2' onSubmit={handleFormSubmit}>
             <div className='form-floating'>
               <input
@@ -121,19 +121,34 @@ const handleDropDownChange = (e) => {
                 <option value="false">Not Admin</option>
               </select>
               <label htmlFor='admin' className='form-label'>Admin</label>
-              </div>
+            </div>
 
-
-
-
-            <button className="btn btn-warning mx-auto" type="submit">
+            <Button className="btn btn-warning mx-auto" type="submit">
               Submit
-            </button>
-
-
-
+            </Button>
           </form>
 
+          <Modal show={showModal} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Welcome, {firstNameInput} {lastNameInput}!</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>You have successfully signed up.</Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={() => {
+                handleClose();
+                setFirstName(firstNameInput);
+                setLastName(lastNameInput);
+                setLoggedIn(true);
+                setIsAdmin(true);
+                navigate('/home');
+              }}>
+                Continue
+              </Button>
+            </Modal.Footer>
+          </Modal>
 
           <p>
             Already have an account? <Link className='link link-warning' to="/login">Login</Link>
