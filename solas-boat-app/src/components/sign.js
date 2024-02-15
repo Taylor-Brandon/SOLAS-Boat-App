@@ -128,20 +128,20 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin, se
             </Button>
           </form>
 
-          <Modal show={showModal} onHide={handleClose}>
+          <Modal id="modal" show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Welcome, {firstNameInput} {lastNameInput}!</Modal.Title>
             </Modal.Header>
             <Modal.Body>You have successfully signed up.</Modal.Body>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
+              <Button className="btn btn-warning" variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="primary" onClick={() => {
+              <Button className='btn btn-warning' variant="primary" onClick={() => {
     handleClose();
     setFirstName(firstNameInput);
     setLastName(lastNameInput);
-    setUserNameInput(userName); // Set the userNameInput state here
+    setUserNameInput(userName); 
     setPassword(password);
     setLoggedIn(true);
     setIsAdmin(true);
