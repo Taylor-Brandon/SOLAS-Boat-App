@@ -4,7 +4,7 @@ import '../styles/sign.css';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin }) {
+function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin, setUserNameInput }) {
   const [firstNameInput, setFirstNameInput] = useState('');
   const [lastNameInput, setLastNameInput] = useState('');
   const [userName, setUserName] = useState('');
@@ -138,15 +138,18 @@ function Sign({ loggedIn, setLoggedIn, setFirstName, setLastName, setIsAdmin }) 
                 Close
               </Button>
               <Button variant="primary" onClick={() => {
-                handleClose();
-                setFirstName(firstNameInput);
-                setLastName(lastNameInput);
-                setLoggedIn(true);
-                setIsAdmin(true);
-                navigate('/home');
-              }}>
-                Continue
-              </Button>
+    handleClose();
+    setFirstName(firstNameInput);
+    setLastName(lastNameInput);
+    setUserNameInput(userName); // Set the userNameInput state here
+    setPassword(password);
+    setLoggedIn(true);
+    setIsAdmin(true);
+    navigate('/home');
+}}>
+    Continue
+</Button>
+
             </Modal.Footer>
           </Modal>
 

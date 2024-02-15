@@ -4,8 +4,9 @@ import Navigation from '../components/nav';
 import '../styles/profile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';  
 
-function Profile({ firstName, lastName, isAdmin }) {
+function Profile({ firstName, lastName, isAdmin, userNameInput }) {
     console.log(isAdmin);
+    console.log(userNameInput);
     const isAdminString = isAdmin ? "Admin" : "Not Admin";
 
     return (
@@ -13,6 +14,7 @@ function Profile({ firstName, lastName, isAdmin }) {
             {!isAdmin ? (
                 <>
                     <h1 id='admin'>Hello: {isAdminString}</h1>
+                    <h1 id="user">{userNameInput}</h1>
                     <div className='bg-image'>
                         <div className='bd-text'></div>
                     </div>
@@ -23,6 +25,7 @@ function Profile({ firstName, lastName, isAdmin }) {
             ) : (
                 <>
                     <h1 id="admin">Hello: {isAdminString}</h1>
+                    <h1 id="user">{userNameInput}</h1>
                     <div className='bg-image'>
                         <div className='bg-text'></div> 
                     </div>
