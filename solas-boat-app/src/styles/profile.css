@@ -46,9 +46,14 @@
     font-family: 'Gowun Batang', serif;
 }
 
-.adminRole {
+#admin {
     /* Adjust the margin or remove it if not needed */
     /* margin-left: 100px; */
     font-family: 'Gowun Batang', serif;
     color: orange;
+}
+#user{
+    font-family: 'Gowun Batang', serif;
+    color: orange;
+
 }
