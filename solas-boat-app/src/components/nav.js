@@ -32,6 +32,9 @@ function Navigation() {
                     <li>
                         <button className='btn btn-warning'>Adjust Roles</button>
                     </li>
+                    <li>
+                    <button id='password' className='btn btn-warning'>Change Password</button>
+                    </li>
                 </ul>
             </div>
         </div>
