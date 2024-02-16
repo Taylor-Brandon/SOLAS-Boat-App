@@ -6,33 +6,44 @@
     background-image: url("../../images/WillardMarine.png");
     filter: blur(8px);
     -webkit-filter: blur(8px);
-    height: 100vh; /* Use viewport height to cover the entire viewport */
-    background-position: center;
+    position: absolute; /* Positioning the background image absolutely */
+    top: 0;
+    left: 0; /* Setting the background image to the left edge */
+    width: 100%; /* Covering the entire page horizontally */
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
 .navbar-toggler {
     position: fixed; /* Set to fixed to position it relative to the viewport */
     top: 10px;
-    left: 10px; /* Adjust the positioning as needed */
+    left: 20px; /* Adjust the positioning as needed */
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
     z-index: 1000; /* Ensure it's above other elements */
 }
+    
+
 
 .welcomeProfile {
     font-family: 'Gowun Batang', serif;
     background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
     color: white;
     font-weight: bold;
-    position: absolute;
-    top: 60px;
-    left: 50%;
+   position: absolute;
+   top: 30px;
+   left: 800px;
+   
     transform: translate(-50%, -50%);
     z-index: 2;
     width: 80%;
     padding: 20px;
     text-align: center;
 }
+
 
 .logOut {
     text-decoration: none;
@@ -43,8 +54,11 @@
     position: absolute;
     top: 10px;
     right: 20px;
+    width: 60px;
+    height: 60px;
     font-family: 'Gowun Batang', serif;
-}
+  }
+  
 
 #admin {
     /* Adjust the margin or remove it if not needed */

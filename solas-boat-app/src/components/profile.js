@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Navigation from "../components/nav";
 import "../styles/profile.css";
@@ -27,9 +26,7 @@ function Profile({ firstName, lastName, isAdmin, userNameInput }) {
         </>
       ) : (
         <>
-          <div className="bg-image">
-            <div className="bg-text"></div>
-          </div>
+          <div className="bg-image"></div>
           <h1 className="welcomeProfile">
             Welcome {firstName} {lastName}
           </h1>
