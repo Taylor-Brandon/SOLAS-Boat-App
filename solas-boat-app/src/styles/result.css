@@ -1,0 +1,12 @@
+#resultHeader{
+    font-family: 'Gowun Batang', serif;
+    color: white;
+}
+li{
+    font-family: 'Gowun Batang', serif;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 680px;
+}

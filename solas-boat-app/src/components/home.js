@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import boats from '../utils/data';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 
 import '../styles/home.css';
 
-const Home = ({ firstName, lastName }) => {
+const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResult, setSearchResult] = useState([]);
   const navigate = useNavigate(); 
@@ -24,25 +28,28 @@ const Home = ({ firstName, lastName }) => {
     }
   };
 
-  
   return (
     <div>
       <h2 className='header'>Search</h2>
       <form className='form p-2' onSubmit={handleSearch}>
         <div className='form-floating'>
           <input
-          className='form-control'
+            className='form-control'
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        <button className='btn btn-warning mx-auto' type="submit">Search</button>
+          <button id='search' className='btn btn-warning mx-auto' type="submit">
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
         </div>
       </form>
-  <Link className='logLink' to="/">Logout</Link>
-  <Link className='profileLink' to="/profile">{firstName} {lastName}</Link>
-
-
+      <Link className='logLink' to="/">
+      <FontAwesomeIcon icon={faRightFromBracket} size="2x" />
+      </Link>
+      <Link className='profileLink' to="/profile">
+      <FontAwesomeIcon icon={faUser} size="2x" />
+      </Link>
     </div>
   );
 };
