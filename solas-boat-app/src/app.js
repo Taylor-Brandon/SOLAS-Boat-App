@@ -20,7 +20,7 @@ function App() {
       <Route path="/" element={<Sign setLoggedIn={setLoggedIn} setFirstName={setFirstName} setLastName={setLastName} setIsAdmin={setIsAdmin} setUserNameInput={setUserNameInput} />} />
         <Route path="/signup" element={<Sign setLoggedIn={setLoggedIn} />} />
         <Route path="/login" element={<Log setLoggedIn={setLoggedIn} />} />
-        <Route path="/home" element={<Home firstName={firstName} lastName={lastName} />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/results" element={<Results />} />
         <Route path="/profile" element={<Profile firstName={firstName} lastName={lastName} isAdmin={isAdmin} userNameInput={userNameInput} />} />
         <Route path="/pdf" element={<PDFViewer />} />
