@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID
     firstName: String
     lastName: String
-    userName: String
+    email: String
     password: String
     admin: Boolean
     pdfs: [Pdf]
@@ -49,7 +49,7 @@ const typeDefs = gql`
     pdf(pdfId: ID!): Pdf
   }
   type Mutation {
-    addUser(firstName: String!, lastName: String!, userName: String!, password: String!, admin: Boolean!): Auth
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, admin: Boolean!): Auth
     login(email: String!, password: String!): Auth
     addShip(
       Ship: String!
