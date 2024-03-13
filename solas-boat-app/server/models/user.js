@@ -21,6 +21,18 @@ const userSchema = new Schema({
     type: Boolean,
     required: true
   },
+  pdfs: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Pdf'
+    }
+  ],
+  ships: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Ship'
+    }
+  ]
 });
 
 const User = model("User", userSchema);

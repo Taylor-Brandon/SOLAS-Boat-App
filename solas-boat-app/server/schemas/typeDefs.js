@@ -8,6 +8,8 @@ const typeDefs = gql`
     userName: String
     password: String
     admin: Boolean
+    pdfs: [Pdf]
+    ships: [Ship]
   }
   type Ship {
     _id: ID
@@ -26,11 +28,13 @@ const typeDefs = gql`
     POCEmail: String
     POCPhoneNumber: String
     Notes: String
+    user: User
   }
   type Pdf {
     _id: ID
     fileName: String
     path: String
+    user: User
   }
   type Query {
     users: [User]

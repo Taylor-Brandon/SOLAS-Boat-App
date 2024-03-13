@@ -56,6 +56,10 @@ const solasSchema = new Schema({
     Notes: { 
         type: String
     },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+      }
 });
 
 const Ship = model("Ship", solasSchema);
