@@ -1,4 +1,6 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { User, Ship, Pdf } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -39,12 +41,20 @@ const resolvers = {
 
   Mutation: {
     addUser: async (parent, {firstName, lastName, userName, password, admin}) => {
-      try {
-        return await User.create({firstName, lastName, userName, password, admin});
-      } catch (error) {
-        console.error('Error adding user:', error);
-        throw error;
+      const user = await User.createe({ firstName, lastName, userName, password, admin});
+      const token = signToken(user);
+
+      return{ token, user };
+    },
+    login: async(parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No Profile with this email found!');
       }
+
+      const token = signToken(user);
+      return { token, user };
     },
     addShip: async (parent, {Ship, Model, HRN, HIN, ContactNumber, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber}) => {
       try {
