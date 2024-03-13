@@ -1,6 +1,6 @@
 const db = require('../config/connection');
 const { User, Ship, Pdf } = require('../models');
-const userData = require('../seeds/userData.json');
+const userData = require('../seeders/userData.json');
 const solasData = require('./solasData.json');
 const pdfFileData = require('./pdfFileData.json');
 
