@@ -37,10 +37,36 @@ const typeDefs = gql`
     user: User
   }
   type Query {
-    users: [User]
-    ships: [Ship]
-    pdfs: [Pdf]
+    users: [User]!
+    user(userId: ID!): User
+    ships: [Ship]!
+    ship(shipId: ID!): Ship
+    pdfs: [Pdf]!
+    pdf(pdfId: ID!): Pdf
   }
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, userName: String!, password: String!, admin: Boolean!): User
+    addShip(
+      Ship: String!
+      Model: String!
+      HRN: String!
+      HIN: String!
+      ContactNumber: String!
+      SponsonSerialNumber: String!
+      SRBSerialNumber: String!
+      fuelTankSerialNumber: String!
+      ZAPR356C2BVMXHookSerialNumber: String!
+      engineMakeModel: String!
+      engineSerialNumber: String!
+      POCName: String!
+      POCEmail: String!
+      POCPhoneNumber: String!
+    ): Ship
+    addPdf(fileName: String!, path: String!): Pdf
+    removeUser(userId: ID!): User
+    removeShip(shipId: ID!): Ship
+    removePdf(pdfId: ID!): Pdf
+  }  
 `;
 
 module.exports = typeDefs;
