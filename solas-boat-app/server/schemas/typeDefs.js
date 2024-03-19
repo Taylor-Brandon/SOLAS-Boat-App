@@ -66,6 +66,7 @@ const typeDefs = gql`
       POCName: String!
       POCEmail: String!
       POCPhoneNumber: String!
+      Notes: String!
     ): Ship
     addPdf(fileName: String!, path: String!): Pdf
     removeUser(userId: ID!): User
