@@ -1,4 +1,6 @@
+const { AuthenticationError } = require('apollo-server-express');
 const { User, Ship, Pdf } = require('../models');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
@@ -38,14 +40,28 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, {firstName, lastName, userName, password, admin}) => {
-      try {
-        return await User.create({firstName, lastName, userName, password, admin});
-      } catch (error) {
-        console.error('Error adding user:', error);
-        throw error;
-      }
+    addUser: async (parent, {firstName, lastName, email, password, admin}) => {
+      const user = await User.create({ firstName, lastName, email, password, admin});
+      const token = signToken(user);
+
+      return{ token, user };
     },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+    
+      if (!user) {
+        throw new AuthenticationError('No profile with this email found!');
+      }
+    
+      const correctPassword = await user.isCorrectPassword(password);
+      if (!correctPassword) {
+        throw new AuthenticationError('Incorrect password!');
+      }
+    
+      const token = signToken(user);
+      return { token, user };
+    },
+    
     addShip: async (parent, {Ship, Model, HRN, HIN, ContactNumber, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber}) => {
       try {
         return await Ship.create({Ship, Model, HRN, HIN, ContactNumber, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber});

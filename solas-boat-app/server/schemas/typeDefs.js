@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID
     firstName: String
     lastName: String
-    userName: String
+    email: String
     password: String
     admin: Boolean
     pdfs: [Pdf]
@@ -36,6 +36,10 @@ const typeDefs = gql`
     path: String
     user: User
   }
+  type Auth {
+    token: ID!
+    user: User
+  }
   type Query {
     users: [User]!
     user(userId: ID!): User
@@ -45,7 +49,8 @@ const typeDefs = gql`
     pdf(pdfId: ID!): Pdf
   }
   type Mutation {
-    addUser(firstName: String!, lastName: String!, userName: String!, password: String!, admin: Boolean!): User
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!, admin: Boolean!): Auth
+    login(email: String!, password: String!): Auth
     addShip(
       Ship: String!
       Model: String!
@@ -61,6 +66,7 @@ const typeDefs = gql`
       POCName: String!
       POCEmail: String!
       POCPhoneNumber: String!
+      Notes: String!
     ): Ship
     addPdf(fileName: String!, path: String!): Pdf
     removeUser(userId: ID!): User

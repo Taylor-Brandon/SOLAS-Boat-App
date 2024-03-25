@@ -1,64 +1,54 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Navigate, useNavigate } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+
+import Auth from '../utils/auth';
 import '../styles/log.css';
 
-function Sign({ loggedIn, setLoggedIn }) {
-  const [userName, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [error, setError] = useState('');
-
+function Log() {
+  const [formState, setFormState] = useState({ email: '', password: ''});
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate(); 
-  const mockAuthenticate = async () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-       
-        resolve({ success: true, isAdmin: isAdmin });
-      }, 1000); 
-    });
-  };
 
   const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    if (type === 'checkbox') {
-      setIsAdmin(checked);
-    } else {
-      switch (name) {
-        case 'userName':
-          setUserName(value);
-          break;
-        case 'password':
-          setPassword(value);
-          break;
-        default:
-          break;
-      }
-    }
+    const { name, value } = e.target;
+    
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!userName || !password) {
-      alert('Please fill in all required fields.');
-      return;
-    }
+    console.log(formState);
     try {
-      const response = await mockAuthenticate();
-
-      if (response.success) {
-       
-        setLoggedIn(true);
-        navigate('/home'); 
-      } else {
-       
-        setError('Invalid username or password');
-      }
+      const { data } = await login({
+        variables: { ...formState },
+      });
+  
+      Auth.login(data.login.token);
+      setLoggedIn(true);
+      navigate('/home');
     } catch (error) {
-      console.error('Login error:', error);
-      setError('Error occurred during login');
+      console.error(error);
+      if (error.message.includes('Invalid credentials')) {
+        // Handle invalid credentials error
+        console.log('Invalid credentials');
+        // You might want to display an error message to the user here
+      } else {
+        // Handle other errors
+        console.log('An error occurred');
+      }
     }
+    setFormState({
+      email: '',
+      password: '',
+    });
   };
+  
 
   return (
     <div>
@@ -66,42 +56,40 @@ function Sign({ loggedIn, setLoggedIn }) {
         <Navigate to="/home" /> 
       ) : (
         <>
-          <p>
-            {error && <span style={{ color: 'red' }}>{error}</span>}
-          </p>
+          {error && <p style={{ color: 'red' }}>{error.message}</p>}
           <h2 className='header'>Login</h2>
-          <form className='form w-25 p-2'>
+          <form className='form w-25 p-2' onSubmit={handleFormSubmit}>
             <div className='form-floating'>
-            <input
-            className='form-control'
-              value={userName}
-              name="userName"
-              onChange={handleInputChange}
-              type="text"
-              placeholder='Username'
-            />
-            <label className='form-label' for='userName'>Username</label>
+              <input
+                className='form-control'
+                value={formState.email}
+                name="email"
+                onChange={handleInputChange}
+                type="text"
+                placeholder='Email'
+              />
+              <label htmlFor='Email' className='form-label'>Email</label>
             </div>
             <div className='form-floating'>
-            <input
-            className='form-control'
-              value={password}
-              name="password"
-              onChange={handleInputChange}
-              type="password"
-              placeholder='Password'
-            />
-            <label className='form-label' for='password'>Password</label>
+              <input
+                className='form-control'
+                value={formState.password}
+                name="password"
+                onChange={handleInputChange}
+                type="password"
+                placeholder='Password'
+              />
+              <label htmlFor='password' className='form-label'>Password</label>
             </div>
-            <button className='btn btn-warning' type="button" onClick={handleFormSubmit}>
+            <button className='btn btn-warning' type="submit">
               Submit
             </button>
           </form>
-         
         </>
       )}
     </div>
   );
 }
 
-export default Sign;
+export default Log;
+
