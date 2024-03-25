@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 import "../styles/sign.css";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Alert from "react-bootstrap/Alert"; // Add this import
+import Alert from "react-bootstrap/Alert";
 
-function Sign({
-  loggedIn,
-  setLoggedIn,
-  setFirstName,
-  setLastName,
-  setIsAdmin,
-  setUserNameInput,
-}) {
-  const [firstNameInput, setFirstNameInput] = useState("");
-  const [lastNameInput, setLastNameInput] = useState("");
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [admin, setAdmin] = useState(false);
+function Sign() {
+  const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    admin : false,
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [showAlert, setShowAlert] = useState(false); // Add this state
+  const [showAlert, setShowAlert] = useState(false);
 
   const navigate = useNavigate();
   const handleClose = () => setShowModal(false);
@@ -27,35 +27,35 @@ function Sign({
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    switch (name) {
-      case "firstName":
-        setFirstNameInput(value);
-        break;
-      case "lastName":
-        setLastNameInput(value);
-        break;
-      case "userName":
-        setUserName(value);
-        break;
-      case "password":
-        setPassword(value);
-        break;
-      default:
-        break;
-    }
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
   };
 
   const handleDropDownChange = (e) => {
-    setAdmin(e.target.value);
+    setFormState({
+      ...formState,
+      admin: e.target.value === 'true',
+    });
   };
+  
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!firstNameInput || !lastNameInput || !userName || !password) {
-      setShowAlert(true); // Show the alert
-      return;
+    console.log(formState);
+
+    try{
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+      Auth.login(data.addUser.token);
+      setShowModal(true);
+      setLoggedIn(true);
+    } catch (e) {
+      console.error(e);
+      setShowAlert(true);
     }
-    setShowModal(true);
   };
 
   return (
@@ -65,7 +65,7 @@ function Sign({
       ) : (
         <>
           <h2 className="header p-4">Please Sign Up!</h2>
-          {showAlert && ( // Render the alert if showAlert is true
+          {showAlert && ( 
             <Alert
               id="alert"
               variant="warning"
@@ -79,7 +79,7 @@ function Sign({
             <div className="form-floating">
               <input
                 className="form-control"
-                value={firstNameInput}
+                value={formState.firstName}
                 name="firstName"
                 onChange={handleInputChange}
                 type="text"
@@ -92,7 +92,7 @@ function Sign({
             <div className="form-floating">
               <input
                 className="form-control"
-                value={lastNameInput}
+                value={formState.lastName}
                 name="lastName"
                 onChange={handleInputChange}
                 type="text"
@@ -105,21 +105,21 @@ function Sign({
             <div className="form-floating">
               <input
                 className="form-control"
-                value={userName}
-                name="userName"
+                value={formState.email}
+                name="email"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Username"
+                placeholder="Email"
               />
-              <label htmlFor="userName" className="form-label">
-                Username
+              <label htmlFor="Email" className="form-label">
+                Email
               </label>
             </div>
 
             <div className="form-floating">
               <input
                 className="form-control"
-                value={password}
+                value={formState.password}
                 name="password"
                 onChange={handleInputChange}
                 type="password"
@@ -132,7 +132,7 @@ function Sign({
             <div id="dropdown" className="form-floating mt-3 w-50">
               <select
                 className="form-select"
-                value={admin}
+                value={formState.admin}
                 name="admin"
                 onChange={handleDropDownChange}
               >
@@ -153,7 +153,7 @@ function Sign({
           <Modal id="modal" show={showModal} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>
-                Welcome, {firstNameInput} {lastNameInput}!
+                Welcome, {formState.firstName} {formState.lastName}!
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>You have successfully signed up.</Modal.Body>
@@ -170,12 +170,7 @@ function Sign({
                 variant="primary"
                 onClick={() => {
                   handleClose();
-                  setFirstName(firstNameInput);
-                  setLastName(lastNameInput);
-                  setUserNameInput(userName);
-                  setPassword(password);
                   setLoggedIn(true);
-                  setIsAdmin(true);
                   navigate("/home");
                 }}
               >
