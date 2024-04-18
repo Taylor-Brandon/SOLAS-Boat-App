@@ -1,18 +1,30 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-
-
-import '../styles/home.css';
+import React from "react";
+import ShipsList from "./ships";
+import { useQuery } from "@apollo/client";
+import { QUERY_SHIPS } from "../utils/queries";
 
 const Home = () => {
-  return(
-    <h1>Hello</h1>
-  )
-}
+    const { loading, error, data } = useQuery(QUERY_SHIPS);
+    const ships = data?.ships || [];
+
+    return (
+        <main>
+            <div className="flex-row justify-center">
+                <div className="col-12 col-md-10 my-3">
+                    {loading ? (
+                        <div>Loading...</div>
+                    ) : error ? (
+                        <div>Error fetching data. Please try again later.</div>
+                    ) : (
+                        <ShipsList
+                            ships={ships}
+                            title="Here is the current roster of ships..."
+                        />
+                    )}
+                </div>
+            </div>
+        </main>
+    );
+};
 
 export default Home;

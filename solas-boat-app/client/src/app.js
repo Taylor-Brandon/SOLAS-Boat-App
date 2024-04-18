@@ -14,6 +14,7 @@ import Log from './components/log';
 import Results from './components/results';
 import Profile from './components/profile';
 import PDFViewer from './components/pdf';
+import ShipsList from './components/ships';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -46,6 +47,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/results" element={<Results />} />
         <Route path="/profile" element={<Profile  />} />
+        <Route path="/shipsList" element={<ShipsList />} />
         <Route path="/pdf" element={<PDFViewer />} />
       </Routes>
     </Router>

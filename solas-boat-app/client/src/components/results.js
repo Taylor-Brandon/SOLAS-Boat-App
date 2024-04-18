@@ -5,21 +5,20 @@ import "../styles/result.css";
 const Results = () => {
   const location = useLocation();
   const { state } = location;
-  const searchResult = state?.searchResult || [];
+  console.log("Received data in Results component:", state);
+  const searchResult = state?.results || [];
 
   if (!searchResult || !Array.isArray(searchResult)) {
     return <div>No results found</div>;
   }
-
-  console.log("Rendering search results:", searchResult);
 
   return (
     <div>
       <h2 id="resultHeader">Search Results</h2>
       <ul>
         {searchResult.map((item) => (
-          <li key={item.hrn}>
-            <strong>{item.ship}</strong>: {item.model} - {item.hrn}
+          <li key={item._id}>
+            <strong>{item.Ship}</strong>: {item.Model} - {item.HRN}
           </li>
         ))}
       </ul>
