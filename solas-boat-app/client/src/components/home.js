@@ -1,5 +1,5 @@
 import React from "react";
-import ShipsList from "./ships";
+import Search from '../components/search';
 import { useQuery } from "@apollo/client";
 import { QUERY_SHIPS } from "../utils/queries";
 
@@ -16,10 +16,7 @@ const Home = () => {
                     ) : error ? (
                         <div>Error fetching data. Please try again later.</div>
                     ) : (
-                        <ShipsList
-                            ships={ships}
-                            title="Here is the current roster of ships..."
-                        />
+                        <Search />
                     )}
                 </div>
             </div>

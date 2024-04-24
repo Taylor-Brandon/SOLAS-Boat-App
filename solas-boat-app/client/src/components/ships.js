@@ -1,7 +1,7 @@
 import React from "react";
 
 const ShipsList = ({ ships, title }) => {
-    if (!ships.length) {
+    if (!ships) {
         return <h3>No Ships Yet</h3>;
     }
 
