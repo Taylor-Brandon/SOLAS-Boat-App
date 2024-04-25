@@ -16,11 +16,11 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
-    ContactNumber: {
+    contactNumber: {
         type: String,
         required: true
     },
-    SponsonSerialNumber: {
+    sponsonSerialNumber: {
         type: String,
         required: true
     },

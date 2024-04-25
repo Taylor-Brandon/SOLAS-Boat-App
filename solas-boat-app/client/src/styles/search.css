@@ -1,0 +1,12 @@
+ul{
+    color: white;
+}
+li{
+    position: absolute;
+    margin-top: 500px;
+    padding: 20px;
+    color: white;
+}
+.form-control{
+    width: 100px;
+}
