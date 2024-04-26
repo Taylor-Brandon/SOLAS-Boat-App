@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Search from '../components/search';
+import Search from '../components/search/search';
 import { useQuery } from "@apollo/client";
 import { QUERY_SHIPS } from "../utils/queries";
 
@@ -12,8 +12,8 @@ const Home = () => {
         <main>
             <div className="flex-row justify-center">
                 <div className="col-12 col-md-10 my-3">
-                    <Link to="/login">Logout</Link>
-                    <Link to="/profile">Profile</Link>
+                    <Link className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover p-3" to="/login">Logout</Link>
+                    <Link className="link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover p-3" to="/profile">Profile</Link>
                     {loading ? (
                         <div>Loading...</div>
                     ) : error ? (

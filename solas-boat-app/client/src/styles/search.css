@@ -1,3 +1,6 @@
+h2{
+    color: white;
+}
 ul{
     color: white;
 }
@@ -8,5 +11,9 @@ li{
     color: white;
 }
 .form-control{
-    width: 100px;
+    width: 25%;
+}
+.btn{
+    position: absolute;
+    margin-left: 350px;
 }
