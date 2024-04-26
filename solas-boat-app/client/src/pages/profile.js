@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Navigation from "../components/nav";
+import Navigation from "../components/nav/nav";
 import "../styles/profile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";

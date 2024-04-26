@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Worker, Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
-import '../styles/pdf.css';
+import '../../styles/pdf.css';
 
 function PDFViewer() {
     const [pdfFile, setPdfFile] = useState(null);

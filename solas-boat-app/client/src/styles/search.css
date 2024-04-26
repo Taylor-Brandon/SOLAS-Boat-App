@@ -1,0 +1,19 @@
+h2{
+    color: white;
+}
+ul{
+    color: white;
+}
+li{
+    position: absolute;
+    margin-top: 500px;
+    padding: 20px;
+    color: white;
+}
+.form-control{
+    width: 25%;
+}
+.btn{
+    position: absolute;
+    margin-left: 350px;
+}

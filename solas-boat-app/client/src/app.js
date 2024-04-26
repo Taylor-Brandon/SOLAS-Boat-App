@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -8,12 +8,13 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Sign from './components/sign';
-import Home from './components/home';
-import Log from './components/log';
-import Results from './components/results';
-import Profile from './components/profile';
-import PDFViewer from './components/pdf';
+import Sign from './pages/sign';
+import Home from './pages/home';
+import Log from './pages/log';
+import Results from './pages/results'; 
+import Profile from './pages/profile';
+import PDFViewer from './components/pdf/pdf';
+import ShipsList from './components/ships/ships';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -35,23 +36,23 @@ const client = new ApolloClient({
 });
 
 function App() {
-
   return (
     <ApolloProvider client={client}>
-    <Router>
-      <Routes>
-      <Route path="/" element={<Sign />} />
-        <Route path="/signup" element={<Sign />} />
-        <Route path="/login" element={<Log  />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/results" element={<Results />} />
-        <Route path="/profile" element={<Profile  />} />
-        <Route path="/pdf" element={<PDFViewer />} />
-      </Routes>
-    </Router>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Sign />} />
+          <Route path="/signup" element={<Sign />} />
+          <Route path="/login" element={<Log />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/shipsList" element={<ShipsList />} />
+          <Route path="/pdf" element={<PDFViewer />} />
+          <Route path="/ship/:shipId" element={<Results />} /> 
+        </Routes>
+      </Router>
     </ApolloProvider>
   );
 }
 
 export default App;
-

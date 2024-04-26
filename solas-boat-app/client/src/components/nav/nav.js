@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/nav.css";
+import "../../styles/nav.css";
 
 function Navigation({ userNameInput, isAdminString }) {
   console.log(userNameInput);

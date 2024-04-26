@@ -56,8 +56,8 @@ const typeDefs = gql`
       Model: String!
       HRN: String!
       HIN: String!
-      ContactNumber: String!
-      SponsonSerialNumber: String!
+      contactNumber: String!
+      sponsonSerialNumber: String!
       SRBSerialNumber: String!
       fuelTankSerialNumber: String!
       ZAPR356C2BVMXHookSerialNumber: String!

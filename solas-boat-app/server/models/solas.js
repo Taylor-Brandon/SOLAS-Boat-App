@@ -1,6 +1,6 @@
-const {Schema, model} = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const solasSchema = new Schema({
+const shipSchema = new Schema({
     Ship: {
         type: String,
         required: true
@@ -59,9 +59,9 @@ const solasSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
-      }
+    }
 });
 
-const Ship = model("Ship", solasSchema);
+const Ship = model("Ship", shipSchema);
 
 module.exports = Ship;

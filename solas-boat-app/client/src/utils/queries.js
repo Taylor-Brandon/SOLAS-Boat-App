@@ -31,8 +31,8 @@ export const QUERY_SHIPS = gql`
       Model
       HRN
       HIN
-      ContactNumber
-      SponsonSerialNumber
+      contactNumber
+      sponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
       ZAPR356C2BVMXHookSerialNumber
@@ -94,7 +94,7 @@ export const QUERY_PDFS = gql`
 `;
 
 export const QUERY_SINGLE_PDF = gql`
-  query singlePdf(pdfId: ID!) {
+  query singlePdf($pdfId: ID!) {
     pdf(pdfId: $pdfId) {
       _id
       fileName
