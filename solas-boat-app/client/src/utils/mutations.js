@@ -56,14 +56,26 @@ export const ADD_PDF = gql`
 export const REMOVE_USER = gql`
   mutation removeUser($userId: ID!) {
     removeUser(userId: $userId) {
-      user {
-        _id
-        firstName
-        lastName
-      }
+      _id
+      firstName
+      lastName
     }
   }
 `;
+
+export const UPDATE_USER = gql`
+  mutation updateUser($userId: ID!, $firstName: String, $lastName: String, $email: String, $password: String, $admin: Boolean) {
+    updateUser(userId: $userId, firstName: $firstName, lastName: $lastName, email: $email, password: $password, admin: $admin) {
+      _id
+      firstName
+      lastName
+      email
+      password
+      admin
+    }
+  }
+`;
+
 
 export const REMOVE_SHIP = gql`
   mutation removeShip($shipId: ID!) {
