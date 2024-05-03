@@ -52,7 +52,7 @@ function Navigation({ userNameInput, isAdminString }) {
               <button className="btn btn-warning">Add Data</button>
             </li>
             <li>
-              <button className="btn btn-warning">Adjust Roles</button>
+              <Link id="userListLink" className="userLink" to="/userList">Users</Link>
             </li>
             <li>
               <button id="password" className="btn btn-warning">
