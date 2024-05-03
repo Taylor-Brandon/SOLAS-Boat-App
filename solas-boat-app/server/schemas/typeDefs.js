@@ -41,7 +41,7 @@ const typeDefs = gql`
     user: User
   }
   type Query {
-    users: [User]!
+    users: [User]
     user(userId: ID!): User
     ships: [Ship]!
     ship(shipId: ID!): Ship
@@ -70,6 +70,14 @@ const typeDefs = gql`
     ): Ship
     addPdf(fileName: String!, path: String!): Pdf
     removeUser(userId: ID!): User
+    updateUser(
+      userId: ID
+      firstName: String
+      lastName: String
+      email: String
+      password: String
+      admin: Boolean
+    ): User
     removeShip(shipId: ID!): Ship
     removePdf(pdfId: ID!): Pdf
   }  

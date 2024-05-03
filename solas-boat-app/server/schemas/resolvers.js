@@ -44,7 +44,7 @@ const resolvers = {
       const user = await User.create({ firstName, lastName, email, password, admin});
       const token = signToken(user);
 
-      return{ token, user };
+      return { token, user };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -81,13 +81,30 @@ const resolvers = {
     removeUser: async (parent, { userId }) => {
       return User.findOneAndDelete({ _id: userId });
     },
+    updateUser: async (_, { userId, firstName, lastName, email, password, admin }) => {
+      try {
+        const user = await User.findById(userId);
+
+        if (firstName) user.firstName = firstName;
+        if (lastName) user.lastName = lastName;
+        if (email) user.email = email;
+        if (password) user.password = password; 
+        if (admin !== undefined) user.admin = admin;
+
+        await user.save();
+
+        return user;
+      } catch (error) {
+        throw new Error('Failed to update user information');
+      }
+    },
     removeShip: async (parent, { shipId }) => {
       return Ship.findByIdAndDelete({ _id: shipId });
     },
     removePdf: async (parent, { pdfId }) => {
       return Pdf.findByIdAndDelete({ _id: pdfId });
     }
-  },
-};
+  } 
+}; 
 
 module.exports = resolvers;
