@@ -35,7 +35,18 @@ export const ADD_SHIP = gql`
         _id
         Ship
         Model
+        HRN
+        HIN
+        contactNumber
+        sponsonSerialNumber
+        SRBSerialNumber
+        fuelTankSerialNumber
+        ZAPR356C2BVMXHookSerialNumber
+        engineMakeModel
+        engineSerialNumber
         POCName
+        POCEmail
+        POCPhoneNumber
       }
     }
   }
@@ -75,6 +86,62 @@ export const UPDATE_USER = gql`
     }
   }
 `;
+export const UPDATE_SHIP = gql`
+  mutation updateShip(
+    $shipId: ID!
+    $Ship: String!
+    $Model: String!
+    $HRN: String
+    $HIN: String!
+    $contactNumber: String!
+    $sponsonSerialNumber: String!
+    $SRBSerialNumber: String!
+    $fuelTankSerialNumber: String!
+    $ZAPR356C2BVMXHookSerialNumber: String!
+    $engineMakeModel: String!
+    $engineSerialNumber: String!
+    $POCName: String
+    $POCEmail: String
+    $POCPhoneNumber: String
+    $Notes: String
+  ) {
+    updateShip(
+      shipId: $shipId
+      Ship: $Ship
+      Model: $Model
+      HRN: $HRN
+      HIN: $HIN
+      contactNumber: $contactNumber
+      sponsonSerialNumber: $sponsonSerialNumber
+      SRBSerialNumber: $SRBSerialNumber
+      fuelTankSerialNumber: $fuelTankSerialNumber
+      ZAPR356C2BVMXHookSerialNumber: $ZAPR356C2BVMXHookSerialNumber
+      engineMakeModel: $engineMakeModel
+      engineSerialNumber: $engineSerialNumber
+      POCName: $POCName
+      POCEmail: $POCEmail
+      POCPhoneNumber: $POCPhoneNumber
+      Notes: $Notes
+    ) {
+      _id
+      Ship
+      Model
+      HRN
+      HIN
+      contactNumber
+      sponsonSerialNumber
+      SRBSerialNumber
+      fuelTankSerialNumber
+      ZAPR356C2BVMXHookSerialNumber
+      engineMakeModel
+      engineSerialNumber
+      POCName
+      POCEmail
+      POCPhoneNumber
+    }
+  }
+`;
+
 
 
 export const REMOVE_SHIP = gql`

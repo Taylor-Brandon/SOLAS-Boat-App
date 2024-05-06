@@ -16,22 +16,22 @@ const resolvers = {
       }
     },
     ships: async () => {
-      return await Ship.find({}).populate('user');
+      return await Ship.find({}).populate('users');
     },
     ship: async(parent, {shipId}) => {
       try {
-        return await Ship.findById(shipId).populate('user');
+        return await Ship.findById(shipId).populate('users');
       } catch (error) {
         console.error('Error fetching ship:', error);
         throw error;
       }
     },
     pdfs: async () => {
-      return await Pdf.find({}).populate('user');
+      return await Pdf.find({}).populate('users');
     },
     pdf: async(parent, {pdfId}) => {
       try {
-        return await Pdf.findById(pdfId).populate('user');
+        return await Pdf.findById(pdfId).populate('users');
       } catch (error) {
         console.error('Error fetching pdf:', error);
         throw error;
@@ -96,6 +96,32 @@ const resolvers = {
         return user;
       } catch (error) {
         throw new Error('Failed to update user information');
+      }
+    },
+    updateShip: async (_, {shipId, Ship, Model, HRN, HIN, ContactNumber, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber }) => {
+      try {
+        const ship = await Ship.findById(shipId);
+
+        if (Ship) ship.Ship = Ship;
+        if (Model) ship.Model = Model;
+        if (HRN) ship.HRN = HRN;
+        if (HIN) ship.HIN = HIN;
+        if (ContactNumber) ship.ContactNumber = ContactNumber;
+        if (SponsonSerialNumber) ship.SponsonSerialNumber = SponsonSerialNumber;
+        if (SRBSerialNumber) ship.SRBSerialNumber = SRBSerialNumber;
+        if (fuelTankSerialNumber) ship.fuelTankSerialNumber = fuelTankSerialNumber;
+        if (ZAPR356C2BVMXHookSerialNumber) ship.ZAPR356C2BVMXHookSerialNumber = ZAPR356C2BVMXHookSerialNumber;
+        if (engineMakeModel) ship.engineMakeModel = engineMakeModel;
+        if (engineSerialNumber) ship.engineSerialNumber = engineSerialNumber; 
+        if (POCName) ship.POCName = POCName;
+        if (POCEmail) ship.POCEmail = POCEmail;
+        if (POCPhoneNumber) ship.POCPhoneNumber = POCPhoneNumber;
+
+        await ship.save();
+
+        return ship;
+      } catch (error) {
+        throw new Error ('Failed to update ship information');
       }
     },
     removeShip: async (parent, { shipId }) => {

@@ -14,11 +14,15 @@ import Log from './pages/log';
 import Results from './pages/results'; 
 import Profile from './pages/profile';
 import PDFViewer from './components/pdf/pdf';
-import ShipsList from './components/ships/ships';
 import UserList from './components/userList/users';
 import AddUser from './components/userForm/userForm';
 import EditUser from './components/editUser/edit';
 import ChangeUser from './pages/changeUser';
+import EditSolas from './components/editSolas/editSolas';
+import ShipList from './components/solasList/solasList';
+import AddShip from './components/solasForm/solasForm';
+import ChangeShip from './pages/changeSolas';
+
 
 
 const httpLink = createHttpLink({
@@ -51,13 +55,16 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/results" element={<Results />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/shipsList" element={<ShipsList />} />
           <Route path="/pdf" element={<PDFViewer />} />
           <Route path="/ship/:shipId" element={<Results />} />
           <Route path="/userList" element={<UserList />} />
           <Route path="/addUser" element={<AddUser />} />
           <Route path="/editUser" element={<EditUser />} />
           <Route path="/user/:userId" element={<ChangeUser />} />
+          <Route path="/editSolas" element={<EditSolas />} />
+          <Route path="/shipList" element={<ShipList />} />
+          <Route path="/addShip" element={<AddShip />} />
+          <Route path="/:shipId" element={<ChangeShip />} />
         </Routes>
       </Router>
     </ApolloProvider>
