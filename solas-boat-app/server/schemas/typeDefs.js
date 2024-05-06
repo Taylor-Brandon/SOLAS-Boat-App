@@ -78,6 +78,24 @@ const typeDefs = gql`
       password: String
       admin: Boolean
     ): User
+    updateShip(
+      shipId: ID
+      Ship: String
+      Model: String
+      HRN: String
+      HIN: String
+      contactNumber: String
+      sponsonSerialNumber: String
+      SRBSerialNumber: String
+      fuelTankSerialNumber: String
+      ZAPR356C2BVMXHookSerialNumber: String
+      engineMakeModel: String
+      engineSerialNumber: String
+      POCName: String
+      POCEmail: String
+      POCPhoneNumber: String
+      Notes: String
+    ): Ship
     removeShip(shipId: ID!): Ship
     removePdf(pdfId: ID!): Pdf
   }  

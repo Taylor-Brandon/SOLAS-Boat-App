@@ -56,12 +56,15 @@ const shipSchema = new Schema({
     Notes: { 
         type: String
     },
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }
+    users: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
 });
 
 const Ship = model("Ship", shipSchema);
 
 module.exports = Ship;
+
