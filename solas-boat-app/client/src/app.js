@@ -22,6 +22,7 @@ import EditSolas from './components/editSolas/editSolas';
 import ShipList from './components/solasList/solasList';
 import AddShip from './components/solasForm/solasForm';
 import ChangeShip from './pages/changeSolas';
+import PdfList from './components/deletePdf/deletePdf';
 
 
 
@@ -65,6 +66,7 @@ function App() {
           <Route path="/shipList" element={<ShipList />} />
           <Route path="/addShip" element={<AddShip />} />
           <Route path="/:shipId" element={<ChangeShip />} />
+          <Route path="/pdfList" element={<PdfList />} />
         </Routes>
       </Router>
     </ApolloProvider>

@@ -159,11 +159,10 @@ export const REMOVE_SHIP = gql`
 export const REMOVE_PDF = gql`
   mutation removePdf($pdfId: ID!) {
     removePdf(pdfId: $pdfId) {
-      pdf {
-        _id
-        fileName
-        path
-      }
+      _id
+      fileName
+      path
     }
   }
 `;
+
