@@ -20,6 +20,10 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
+    annualInspectionDate: {
+        type: String,
+        required: true
+    },
     sponsonSerialNumber: {
         type: String,
         required: true
