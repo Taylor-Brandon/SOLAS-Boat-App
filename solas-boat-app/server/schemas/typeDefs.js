@@ -18,6 +18,7 @@ const typeDefs = gql`
     HRN: String
     HIN: String
     contactNumber: String
+    annualInspectionData: String
     sponsonSerialNumber: String
     SRBSerialNumber: String
     fuelTankSerialNumber: String
@@ -57,6 +58,7 @@ const typeDefs = gql`
       HRN: String!
       HIN: String!
       contactNumber: String!
+      annualInspectionData: String!
       sponsonSerialNumber: String!
       SRBSerialNumber: String!
       fuelTankSerialNumber: String!
@@ -85,6 +87,7 @@ const typeDefs = gql`
       HRN: String
       HIN: String
       contactNumber: String
+      annualInspectionDate: String
       sponsonSerialNumber: String
       SRBSerialNumber: String
       fuelTankSerialNumber: String
