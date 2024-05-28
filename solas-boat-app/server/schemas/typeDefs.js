@@ -26,6 +26,7 @@ const typeDefs = gql`
     ZAPR356C2BVMXHookSerialNumber: String
     engineMakeModel: String
     engineSerialNumber: String
+    gear: String
     POCName: String
     POCEmail: String
     POCPhoneNumber: String
@@ -67,6 +68,7 @@ const typeDefs = gql`
       ZAPR356C2BVMXHookSerialNumber: String!
       engineMakeModel: String!
       engineSerialNumber: String!
+      gear: String!
       POCName: String!
       POCEmail: String!
       POCPhoneNumber: String!
@@ -97,6 +99,7 @@ const typeDefs = gql`
       ZAPR356C2BVMXHookSerialNumber: String
       engineMakeModel: String
       engineSerialNumber: String
+      gear: String
       POCName: String
       POCEmail: String
       POCPhoneNumber: String
