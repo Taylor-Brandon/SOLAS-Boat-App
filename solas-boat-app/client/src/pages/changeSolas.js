@@ -35,6 +35,7 @@ const ChangeShip = () => {
         HIN: '',
         contactNumber: '',
         annualInspectionDate: '',
+        fiveYearInspectionDate: '',
         sponsonSerialNumber: '',
         SRBSerialNumber: '',
         fuelTankSerialNumber: '',
@@ -59,6 +60,7 @@ const ChangeShip = () => {
                     HIN: foundShip.HIN,
                     contactNumber: foundShip.contactNumber,
                     annualInspectionDate: foundShip.annualInspectionDate,
+                    fiveYearInspectionDate: foundShip.fiveYearInspectionDate,
                     sponsonSerialNumber: foundShip.sponsonSerialNumber,
                     SRBSerialNumber: foundShip.SRBSerialNumber,
                     fuelTankSerialNumber: foundShip.fuelTankSerialNumber,
@@ -101,6 +103,7 @@ const ChangeShip = () => {
                     <p>HRN: {ship.HRN}</p>
                     <p>Contact Number: {ship.contactNumber}</p>
                     <p>Annual Inspection Date: {ship.annualInspectionDate}</p>
+                    <p>Five Year Inspection Date: {ship.fiveYearInspectionDate}</p>
                     <p>Sponson Serial Number: {ship.sponsonSerialNumber}</p>
                     <p>SRB Serial Number: {ship.SRBSerialNumber}</p>
                     <p>Fuel Tank Serial Number: {ship.fuelTankSerialNumber}</p>
@@ -167,6 +170,15 @@ const ChangeShip = () => {
                         type="text"
                         name="annualInspectionDate"
                         value={formData.annualInspectionDate}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Five Year Inspection Date
+                    <input
+                        type="text"
+                        name="fiveYearInspectionDate"
+                        value={formData.fiveYearInspectionDate}
                         onChange={handleChange}
                     />
                 </label>
