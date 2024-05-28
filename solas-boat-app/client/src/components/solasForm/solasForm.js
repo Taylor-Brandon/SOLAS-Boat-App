@@ -12,6 +12,7 @@ const AddShip = () => {
         HIN: '',
         contactNumber: '',
         annualInspectionDate: '',
+        fiveYearInspectionDate: '',
         sponsonSerialNumber: '',
         SRBSerialNumber: '',
         fuelTankSerialNumber: '',
@@ -128,6 +129,21 @@ const AddShip = () => {
                 Annual Inspection Date
               </label>
               </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.fiveYearInspectionDate}
+                name="fiveYearInspectionDate"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Five Year Inspection Date"
+              />
+              <label htmlFor="fiveYearInspectionDate" className="form-label">
+                Five Year Inspection Date
+              </label>
+              </div>
+
 
               <div className="form-floating">
               <input
