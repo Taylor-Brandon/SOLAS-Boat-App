@@ -32,6 +32,7 @@ const Results = () => {
                   <p>HIN: {ship.HIN}</p>
                   <p>Contact Number: {ship.contactNumber}</p>
                   <p>Annual Inspection Date: {ship.annualInspectionDate}</p>
+                  <p>Five year Inspection Date: {ship.fiveYearInspectionDate}</p>
                   <p>Sponson Serial Number: {ship.sponsonSerialNumber}</p>
                   <p>SRB Serial Number: {ship.SRBSerialNumber}</p>
                   <p>Fuel Tank Serial Number: {ship.fuelTankSerialNumber}</p>
