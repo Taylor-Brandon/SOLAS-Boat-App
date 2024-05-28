@@ -27,6 +27,7 @@ const typeDefs = gql`
     engineMakeModel: String
     engineSerialNumber: String
     gear: String
+    gearSerialNumber: String
     POCName: String
     POCEmail: String
     POCPhoneNumber: String
@@ -69,6 +70,7 @@ const typeDefs = gql`
       engineMakeModel: String!
       engineSerialNumber: String!
       gear: String!
+      gearSerialNumber: String!
       POCName: String!
       POCEmail: String!
       POCPhoneNumber: String!
@@ -100,6 +102,7 @@ const typeDefs = gql`
       engineMakeModel: String
       engineSerialNumber: String
       gear: String
+      gearSerialNumber: String
       POCName: String
       POCEmail: String
       POCPhoneNumber: String
