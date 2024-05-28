@@ -11,6 +11,7 @@ const AddShip = () => {
         HRN: '',
         HIN: '',
         contactNumber: '',
+        annualInspectionDate: '',
         sponsonSerialNumber: '',
         SRBSerialNumber: '',
         fuelTankSerialNumber: '',
@@ -111,6 +112,20 @@ const AddShip = () => {
               />
               <label htmlFor="contactNumber" className="form-label">
                 Contact Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.annualInspectionDate}
+                name="annualInspectionDate"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Annual Inspection Date"
+              />
+              <label htmlFor="annualInspectionDate" className="form-label">
+                Annual Inspection Date
               </label>
               </div>
 
