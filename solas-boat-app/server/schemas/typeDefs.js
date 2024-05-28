@@ -19,6 +19,7 @@ const typeDefs = gql`
     HIN: String
     contactNumber: String
     annualInspectionDate: String
+    fiveYearInspectionDate: String
     sponsonSerialNumber: String
     SRBSerialNumber: String
     fuelTankSerialNumber: String
@@ -59,6 +60,7 @@ const typeDefs = gql`
       HIN: String!
       contactNumber: String!
       annualInspectionDate: String!
+      fiveYearInspectionDate: String!
       sponsonSerialNumber: String!
       SRBSerialNumber: String!
       fuelTankSerialNumber: String!
@@ -88,6 +90,7 @@ const typeDefs = gql`
       HIN: String
       contactNumber: String
       annualInspectionDate: String
+      fiveYearInspectionDate: String
       sponsonSerialNumber: String
       SRBSerialNumber: String
       fuelTankSerialNumber: String
