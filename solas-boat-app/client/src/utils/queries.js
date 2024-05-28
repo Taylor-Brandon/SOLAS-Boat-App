@@ -33,6 +33,7 @@ export const QUERY_SHIPS = gql`
       HIN
       contactNumber
       annualInspectionDate
+      fiveYearInspectionDate
       sponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
@@ -61,6 +62,7 @@ export const QUERY_SINGLE_SHIP= gql`
       HIN
       ContactNumber
       annualInspectionDate
+      fiveYearInspectionDate
       SponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
