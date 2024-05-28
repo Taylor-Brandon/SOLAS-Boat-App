@@ -5,16 +5,16 @@ import { QUERY_SHIPS } from "../utils/queries";
 import "../styles/result.css";
 
 const Results = () => {
-  const { shipId } = useParams(); // Get the shipId from URL params
+  const { shipId } = useParams(); 
   const { loading, error, data } = useQuery(QUERY_SHIPS, {
-      variables: { shipId } // Pass the shipId as a variable to the query
+      variables: { shipId } 
   });
   const [ship, setShip] = useState(null);
 
   useEffect(() => {
       if (data && data.ships) {
-          const foundShip = data.ships.find(ship => ship._id === shipId); // Find the ship with the matching shipId
-          setShip(foundShip); // Set the ship details
+          const foundShip = data.ships.find(ship => ship._id === shipId); 
+          setShip(foundShip); 
       }
   }, [data, shipId]);
 
@@ -31,6 +31,7 @@ const Results = () => {
                   <p>HRN: {ship.HRN}</p>
                   <p>HIN: {ship.HIN}</p>
                   <p>Contact Number: {ship.contactNumber}</p>
+                  <p>Annual Inspection Date: {ship.annualInspectionDate}</p>
                   <p>Sponson Serial Number: {ship.sponsonSerialNumber}</p>
                   <p>SRB Serial Number: {ship.SRBSerialNumber}</p>
                   <p>Fuel Tank Serial Number: {ship.fuelTankSerialNumber}</p>
@@ -40,7 +41,7 @@ const Results = () => {
                   <p>POC Name: {ship.POCName}</p>
                   <p>POC Email: {ship.POCEmail}</p>
                   <p>POC Phone Number: {ship.POCPhoneNumber}</p>
-                  {/* Display additional ship details as needed */}
+                  
               </div>
           )}
       </div>
