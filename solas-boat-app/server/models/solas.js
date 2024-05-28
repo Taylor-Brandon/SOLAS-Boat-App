@@ -52,6 +52,10 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
+    gear: {
+        type: String,
+        required: true
+    },
     POCName: { 
         type: String
     },
