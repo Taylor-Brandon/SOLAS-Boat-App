@@ -40,6 +40,7 @@ export const QUERY_SHIPS = gql`
       ZAPR356C2BVMXHookSerialNumber
       engineMakeModel
       engineSerialNumber
+      gear
       POCName
       POCEmail
       POCPhoneNumber
@@ -69,6 +70,7 @@ export const QUERY_SINGLE_SHIP= gql`
       ZAPR356C2BVMXHookSerialNumber
       engineMakeModel
       engineSerialNumber
+      gear
       POCName
       POCEmail
       POCPhoneNumber
