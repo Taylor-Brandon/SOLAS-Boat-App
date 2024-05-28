@@ -39,6 +39,7 @@ const Results = () => {
                   <p>ZAPR 356C2BVMX Hook Serial Number: {ship.ZAPR356C2BVMXHookSerialNumber}</p>
                   <p>Engine Make/Model: {ship.engineMakeModel}</p>
                   <p>Engine Serial Number: {ship.engineSerialNumber}</p>
+                  <p>Gear: {ship.gear}</p>
                   <p>POC Name: {ship.POCName}</p>
                   <p>POC Email: {ship.POCEmail}</p>
                   <p>POC Phone Number: {ship.POCPhoneNumber}</p>
