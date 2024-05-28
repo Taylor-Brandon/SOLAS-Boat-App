@@ -19,6 +19,7 @@ const AddShip = () => {
         ZAPR356C2BVMXHookSerialNumber: '',
         engineMakeModel: '',
         engineSerialNumber: '',
+        gear: '',
         POCName: '',
         POCEmail: '',
         POCPhoneNumber: '',
@@ -212,6 +213,20 @@ const AddShip = () => {
               />
               <label htmlFor="engineSerialNumber" className="form-label">
                 Engine Serial Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.gear}
+                name="gear"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Gear"
+              />
+              <label htmlFor="gear" className="form-label">
+                Gear
               </label>
               </div>
 
