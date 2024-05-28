@@ -32,6 +32,7 @@ export const QUERY_SHIPS = gql`
       HRN
       HIN
       contactNumber
+      annualInspectionDate
       sponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
@@ -59,6 +60,7 @@ export const QUERY_SINGLE_SHIP= gql`
       HRN
       HIN
       ContactNumber
+      annualInspectionDate
       SponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
