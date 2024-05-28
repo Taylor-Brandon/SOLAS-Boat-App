@@ -24,6 +24,10 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
+    fiveYearInspectionDate: {
+        type: String,
+        required: true
+    },
     sponsonSerialNumber: {
         type: String,
         required: true
