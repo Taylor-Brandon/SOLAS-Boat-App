@@ -42,6 +42,7 @@ const ChangeShip = () => {
         ZAPR356C2BVMXHookSerialNumber: '',
         engineMakeModel: '',
         engineSerialNumber: '',
+        gear: '',
         POCName: '',
         POCEmail: '',
         POCPhoneNumber: '',
@@ -67,6 +68,7 @@ const ChangeShip = () => {
                     ZAPR356C2BVMXHookSerialNumber: foundShip.ZAPR356C2BVMXHookSerialNumber,
                     engineMakeModel: foundShip.engineMakeModel,
                     engineSerialNumber: foundShip.engineSerialNumber,
+                    gear: foundShip.gear,
                     POCName: foundShip.POCName,
                     POCEmail: foundShip.POCEmail,
                     POCPhoneNumber: foundShip.POCPhoneNumber,
@@ -110,6 +112,7 @@ const ChangeShip = () => {
                     <p>ZAPR 356C2BVMX Hook Serial Number: {ship.ZAPR356C2BVMXHookSerialNumber}</p>
                     <p>Engine Make/Model: {ship.engineMakeModel}</p>
                     <p>Engine Serial Number: {ship.engineSerialNumber}</p>
+                    <p>Gear: {ship.gear}</p>
                     <p>POC Name: {ship.POCName}</p>
                     <p>POC Email: {ship.POCEmail}</p>
                     <p>POC Phone Number: {ship.POCPhoneNumber}</p>
@@ -233,6 +236,15 @@ const ChangeShip = () => {
                         type="text"
                         name="engineSerialNumber"
                         value={formData.engineSerialNumber}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Gear
+                    <input
+                        type="text"
+                        name="gear"
+                        value={formData.gear}
                         onChange={handleChange}
                     />
                 </label>
