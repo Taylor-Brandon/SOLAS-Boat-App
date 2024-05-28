@@ -62,9 +62,9 @@ const resolvers = {
       return { token, user };
     },
     
-    addShip: async (parent, {Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber}) => {
+    addShip: async (parent, {Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, POCName, POCEmail, POCPhoneNumber}) => {
       try {
-        return await Ship.create({Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber});
+        return await Ship.create({Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, POCName, POCEmail, POCPhoneNumber});
       } catch (error) {
         console.error('Error adding ship:', error);
         throw error;
@@ -98,7 +98,7 @@ const resolvers = {
         throw new Error('Failed to update user information');
       }
     },
-    updateShip: async (_, {shipId, Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, POCName, POCEmail, POCPhoneNumber }) => {
+    updateShip: async (_, {shipId, Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, POCName, POCEmail, POCPhoneNumber }) => {
       try {
         const ship = await Ship.findById(shipId);
 
@@ -115,6 +115,7 @@ const resolvers = {
         if (ZAPR356C2BVMXHookSerialNumber) ship.ZAPR356C2BVMXHookSerialNumber = ZAPR356C2BVMXHookSerialNumber;
         if (engineMakeModel) ship.engineMakeModel = engineMakeModel;
         if (engineSerialNumber) ship.engineSerialNumber = engineSerialNumber; 
+        if (gear) ship.gear = gear;
         if (POCName) ship.POCName = POCName;
         if (POCEmail) ship.POCEmail = POCEmail;
         if (POCPhoneNumber) ship.POCPhoneNumber = POCPhoneNumber;
