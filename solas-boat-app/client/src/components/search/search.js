@@ -28,7 +28,8 @@ const Search = () => {
       ship.HIN.toLowerCase().includes(searchQuery.toLowerCase())||
       ship.annualInspectionDate.toLowerCase().includes(searchQuery.toLowerCase()) ||
       ship.fiveYearInspectionDate.toLowerCase().includes(searchQuery.toLowerCase())||
-      ship.gear.toLowerCase().includes(searchQuery.toLowerCase())
+      ship.gear.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.gearSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredShips(filteredShips);
   };
