@@ -49,7 +49,6 @@ export const ADD_SHIP = gql`
         gear
         gearSerialNumber
         jet
-        jet
         POCName
         POCEmail
         POCPhoneNumber
