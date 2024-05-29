@@ -21,6 +21,7 @@ const AddShip = () => {
         engineSerialNumber: '',
         gear: '',
         gearSerialNumber: '',
+        jet: '',
         POCName: '',
         POCEmail: '',
         POCPhoneNumber: '',
@@ -242,6 +243,20 @@ const AddShip = () => {
               />
               <label htmlFor="gearSerialNumber" className="form-label">
                 Gear Serial Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.jet}
+                name="jet"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Jet"
+              />
+              <label htmlFor="jet" className="form-label">
+                Jet
               </label>
               </div>
 
