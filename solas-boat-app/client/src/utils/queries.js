@@ -41,6 +41,7 @@ export const QUERY_SHIPS = gql`
       engineMakeModel
       engineSerialNumber
       gear
+      gearSerialNumber
       POCName
       POCEmail
       POCPhoneNumber
@@ -71,6 +72,7 @@ export const QUERY_SINGLE_SHIP= gql`
       engineMakeModel
       engineSerialNumber
       gear
+      gearSerialNumber
       POCName
       POCEmail
       POCPhoneNumber
