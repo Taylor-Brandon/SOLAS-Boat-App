@@ -60,6 +60,10 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
+    jet: {
+        type: String,
+        required: true
+    },
     POCName: { 
         type: String
     },
