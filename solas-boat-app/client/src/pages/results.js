@@ -40,6 +40,7 @@ const Results = () => {
                   <p>Engine Make/Model: {ship.engineMakeModel}</p>
                   <p>Engine Serial Number: {ship.engineSerialNumber}</p>
                   <p>Gear: {ship.gear}</p>
+                  <p>Gear Serial Number: {ship.gearSerialNumber}</p>
                   <p>POC Name: {ship.POCName}</p>
                   <p>POC Email: {ship.POCEmail}</p>
                   <p>POC Phone Number: {ship.POCPhoneNumber}</p>
