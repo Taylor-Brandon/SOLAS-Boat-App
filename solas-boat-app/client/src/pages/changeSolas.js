@@ -34,12 +34,18 @@ const ChangeShip = () => {
         HRN: '',
         HIN: '',
         contactNumber: '',
+        annualInspectionDate: '',
+        fiveYearInspectionDate: '',
         sponsonSerialNumber: '',
         SRBSerialNumber: '',
         fuelTankSerialNumber: '',
         ZAPR356C2BVMXHookSerialNumber: '',
         engineMakeModel: '',
         engineSerialNumber: '',
+        gear: '',
+        gearSerialNumber: '',
+        jet: '',
+        jetSerialNumber: '',
         POCName: '',
         POCEmail: '',
         POCPhoneNumber: '',
@@ -57,12 +63,18 @@ const ChangeShip = () => {
                     HRN: foundShip.HRN,
                     HIN: foundShip.HIN,
                     contactNumber: foundShip.contactNumber,
+                    annualInspectionDate: foundShip.annualInspectionDate,
+                    fiveYearInspectionDate: foundShip.fiveYearInspectionDate,
                     sponsonSerialNumber: foundShip.sponsonSerialNumber,
                     SRBSerialNumber: foundShip.SRBSerialNumber,
                     fuelTankSerialNumber: foundShip.fuelTankSerialNumber,
                     ZAPR356C2BVMXHookSerialNumber: foundShip.ZAPR356C2BVMXHookSerialNumber,
                     engineMakeModel: foundShip.engineMakeModel,
                     engineSerialNumber: foundShip.engineSerialNumber,
+                    gear: foundShip.gear,
+                    gearSerialNumber: foundShip.gearSerialNumber,
+                    jet: foundShip.jet,
+                    jetSerialNumber: foundShip.jetSerialNumber,
                     POCName: foundShip.POCName,
                     POCEmail: foundShip.POCEmail,
                     POCPhoneNumber: foundShip.POCPhoneNumber,
@@ -98,12 +110,18 @@ const ChangeShip = () => {
                     <p>HIN: {ship.HIN}</p>
                     <p>HRN: {ship.HRN}</p>
                     <p>Contact Number: {ship.contactNumber}</p>
+                    <p>Annual Inspection Date: {ship.annualInspectionDate}</p>
+                    <p>Five Year Inspection Date: {ship.fiveYearInspectionDate}</p>
                     <p>Sponson Serial Number: {ship.sponsonSerialNumber}</p>
                     <p>SRB Serial Number: {ship.SRBSerialNumber}</p>
                     <p>Fuel Tank Serial Number: {ship.fuelTankSerialNumber}</p>
                     <p>ZAPR 356C2BVMX Hook Serial Number: {ship.ZAPR356C2BVMXHookSerialNumber}</p>
                     <p>Engine Make/Model: {ship.engineMakeModel}</p>
                     <p>Engine Serial Number: {ship.engineSerialNumber}</p>
+                    <p>Gear: {ship.gear}</p>
+                    <p>Gear Serial Number: {ship.gearSerialNumber}</p>
+                    <p> Jet: {ship.jet}</p>
+                    <p> Jet Serial Number: {ship.jetSerialNumber}</p>
                     <p>POC Name: {ship.POCName}</p>
                     <p>POC Email: {ship.POCEmail}</p>
                     <p>POC Phone Number: {ship.POCPhoneNumber}</p>
@@ -159,6 +177,24 @@ const ChangeShip = () => {
                     />
                 </label>
                 <label>
+                    Annual Inspection Date
+                    <input
+                        type="text"
+                        name="annualInspectionDate"
+                        value={formData.annualInspectionDate}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Five Year Inspection Date
+                    <input
+                        type="text"
+                        name="fiveYearInspectionDate"
+                        value={formData.fiveYearInspectionDate}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
                     Sponson Serial Number
                     <input
                         type="text"
@@ -209,6 +245,51 @@ const ChangeShip = () => {
                         type="text"
                         name="engineSerialNumber"
                         value={formData.engineSerialNumber}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Gear
+                    <input
+                        type="text"
+                        name="gear"
+                        value={formData.gear}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Gear Serial Number 
+                    <input
+                        type="text"
+                        name="gearSerialNumber"
+                        value={formData.gearSerialNumber}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Jet
+                    <input
+                        type="text"
+                        name="jet"
+                        value={formData.jet}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Jet Serial Number
+                    <input
+                        type="text"
+                        name="jetSerialNumber"
+                        value={formData.jetSerialNumber}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    VolvoQ0087
+                    <input
+                        type="text"
+                        name="volvoQ0087"
+                        value={formData.volvoQ0087}
                         onChange={handleChange}
                     />
                 </label>

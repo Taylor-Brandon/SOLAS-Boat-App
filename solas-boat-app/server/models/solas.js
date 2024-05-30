@@ -20,6 +20,14 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
+    annualInspectionDate: {
+        type: String,
+        required: true
+    },
+    fiveYearInspectionDate: {
+        type: String,
+        required: true
+    },
     sponsonSerialNumber: {
         type: String,
         required: true
@@ -41,6 +49,26 @@ const shipSchema = new Schema({
         required: true
     },
     engineSerialNumber: {
+        type: String,
+        required: true
+    },
+    gear: {
+        type: String,
+        required: true
+    },
+    gearSerialNumber: {
+        type: String,
+        required: true
+    },
+    jet: {
+        type: String,
+        required: true
+    },
+    jetSerialNumber: {
+        type: String,
+        required: true
+    },
+    volvoQ0087: {
         type: String,
         required: true
     },

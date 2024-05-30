@@ -11,12 +11,18 @@ const AddShip = () => {
         HRN: '',
         HIN: '',
         contactNumber: '',
+        annualInspectionDate: '',
+        fiveYearInspectionDate: '',
         sponsonSerialNumber: '',
         SRBSerialNumber: '',
         fuelTankSerialNumber: '',
         ZAPR356C2BVMXHookSerialNumber: '',
         engineMakeModel: '',
         engineSerialNumber: '',
+        gear: '',
+        gearSerialNumber: '',
+        jet: '',
+        jetSerialNumber: '',
         POCName: '',
         POCEmail: '',
         POCPhoneNumber: '',
@@ -117,6 +123,35 @@ const AddShip = () => {
               <div className="form-floating">
               <input
                 className="form-control"
+                value={formState.annualInspectionDate}
+                name="annualInspectionDate"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Annual Inspection Date"
+              />
+              <label htmlFor="annualInspectionDate" className="form-label">
+                Annual Inspection Date
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.fiveYearInspectionDate}
+                name="fiveYearInspectionDate"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Five Year Inspection Date"
+              />
+              <label htmlFor="fiveYearInspectionDate" className="form-label">
+                Five Year Inspection Date
+              </label>
+              </div>
+
+
+              <div className="form-floating">
+              <input
+                className="form-control"
                 value={formState.sponsonSerialNumber}
                 name="sponsonSerialNumber"
                 onChange={handleInputChange}
@@ -181,6 +216,76 @@ const AddShip = () => {
               />
               <label htmlFor="engineSerialNumber" className="form-label">
                 Engine Serial Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.gear}
+                name="gear"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Gear"
+              />
+              <label htmlFor="gear" className="form-label">
+                Gear
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.gearSerialNumber}
+                name="gearSerialNumber"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Gear Serial Number"
+              />
+              <label htmlFor="gearSerialNumber" className="form-label">
+                Gear Serial Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.jet}
+                name="jet"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Jet"
+              />
+              <label htmlFor="jet" className="form-label">
+                Jet
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.jetSerialNumber}
+                name="jetSerialNumber"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Jet Serial Number"
+              />
+              <label htmlFor="jetSerialNumber" className="form-label">
+                Jet Serial Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.volvoQ0087}
+                name="volvoQ0087"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="VolvoQ0087"
+              />
+              <label htmlFor="volvoQ0087" className="form-label">
+                VolvoQ0087
               </label>
               </div>
 

@@ -25,7 +25,14 @@ const Search = () => {
       ship.Ship.toLowerCase().includes(searchQuery.toLowerCase()) ||
       ship.Model.toLowerCase().includes(searchQuery.toLowerCase())||
       ship.HRN.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      ship.HIN.toLowerCase().includes(searchQuery.toLowerCase())
+      ship.HIN.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.annualInspectionDate.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      ship.fiveYearInspectionDate.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.gear.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.gearSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.jet.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.jetSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.volvoQ0087.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredShips(filteredShips);
   };

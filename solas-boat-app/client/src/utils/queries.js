@@ -32,12 +32,19 @@ export const QUERY_SHIPS = gql`
       HRN
       HIN
       contactNumber
+      annualInspectionDate
+      fiveYearInspectionDate
       sponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
       ZAPR356C2BVMXHookSerialNumber
       engineMakeModel
       engineSerialNumber
+      gear
+      gearSerialNumber
+      jet
+      jetSerialNumber
+      volvoQ0087
       POCName
       POCEmail
       POCPhoneNumber
@@ -59,12 +66,19 @@ export const QUERY_SINGLE_SHIP= gql`
       HRN
       HIN
       ContactNumber
+      annualInspectionDate
+      fiveYearInspectionDate
       SponsonSerialNumber
       SRBSerialNumber
       fuelTankSerialNumber
       ZAPR356C2BVMXHookSerialNumber
       engineMakeModel
       engineSerialNumber
+      gear
+      gearSerialNumber
+      jet
+      jetSerialNumber
+      volvoQ0087
       POCName
       POCEmail
       POCPhoneNumber
