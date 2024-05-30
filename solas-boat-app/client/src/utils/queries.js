@@ -43,6 +43,7 @@ export const QUERY_SHIPS = gql`
       gear
       gearSerialNumber
       jet
+      jetSerialNumber
       POCName
       POCEmail
       POCPhoneNumber
@@ -75,6 +76,7 @@ export const QUERY_SINGLE_SHIP= gql`
       gear
       gearSerialNumber
       jet
+      jetSerialNumber
       POCName
       POCEmail
       POCPhoneNumber
