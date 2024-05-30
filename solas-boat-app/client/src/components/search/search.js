@@ -30,7 +30,8 @@ const Search = () => {
       ship.fiveYearInspectionDate.toLowerCase().includes(searchQuery.toLowerCase())||
       ship.gear.toLowerCase().includes(searchQuery.toLowerCase())||
       ship.gearSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())||
-      ship.jet.toLowerCase().includes(searchQuery.toLowerCase())
+      ship.jet.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.jetSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredShips(filteredShips);
   };
