@@ -62,9 +62,9 @@ const resolvers = {
       return { token, user };
     },
     
-    addShip: async (parent, {Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, gearSerialNumber, jet, jetSerialNumber, POCName, POCEmail, POCPhoneNumber}) => {
+    addShip: async (parent, {Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, gearSerialNumber, jet, jetSerialNumber, volvoQ0087, POCName, POCEmail, POCPhoneNumber}) => {
       try {
-        return await Ship.create({Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, gearSerialNumber, jet, jetSerialNumber, POCName, POCEmail, POCPhoneNumber});
+        return await Ship.create({Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, gearSerialNumber, jet, jetSerialNumber, volvoQ0087, POCName, POCEmail, POCPhoneNumber});
       } catch (error) {
         console.error('Error adding ship:', error);
         throw error;
@@ -98,7 +98,7 @@ const resolvers = {
         throw new Error('Failed to update user information');
       }
     },
-    updateShip: async (_, {shipId, Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, gearSerialNumber, jet, jetSerialNumber, POCName, POCEmail, POCPhoneNumber }) => {
+    updateShip: async (_, {shipId, Ship, Model, HRN, HIN, ContactNumber, annualInspectionDate, fiveYearInspectionDate, SponsonSerialNumber, SRBSerialNumber, fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber, engineMakeModel, engineSerialNumber, gear, gearSerialNumber, jet, jetSerialNumber, volvoQ0087, POCName, POCEmail, POCPhoneNumber }) => {
       try {
         const ship = await Ship.findById(shipId);
 
@@ -119,6 +119,7 @@ const resolvers = {
         if (gearSerialNumber) ship.gearSerialNumber = gearSerialNumber;
         if (jet) ship.jet = jet;
         if (jetSerialNumber) ship.jetSerialNumber = jetSerialNumber;
+        if (volvoQ0087) ship.volvoQ0087 = volvoQ0087;
         if (POCName) ship.POCName = POCName;
         if (POCEmail) ship.POCEmail = POCEmail;
         if (POCPhoneNumber) ship.POCPhoneNumber = POCPhoneNumber;
