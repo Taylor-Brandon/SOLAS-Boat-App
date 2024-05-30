@@ -29,8 +29,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_SHIP = gql`
-  mutation addShip($Ship: String!, $Model: String!, $HRN: String, $HIN: String!, $contactNumber: String!, $annualInspectionDate: String!, $fiveYearInspectionDate: String!, $sponsonSerialNumber: String!, $SRBSerialNumber: String!, $fuelTankSerialNumber: String!, $ZAPR356C2BVMXHookSerialNumber: String!, $engineMakeModel: String!, $engineSerialNumber: String!, $gear: String, $gearSerialNumber: String, $jet: String, $jetSerialNumber: String, $POCName: String, $POCEmail: String, $POCPhoneNumber: String, $Notes: String) {
-    addShip(Ship: $Ship, Model: $Model, HRN: $HRN, HIN: $HIN, contactNumber: $contactNumber, annualInspectionDate: $annualInspectionDate, fiveYearInspectionDate: $fiveYearInspectionDate, sponsonSerialNumber: $sponsonSerialNumber, SRBSerialNumber: $SRBSerialNumber, fuelTankSerialNumber: $fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber: $ZAPR356C2BVMXHookSerialNumber, engineMakeModel: $engineMakeModel, engineSerialNumber: $engineSerialNumber, gear: $gear, gearSerialNumber: $gearSerialNumber, jet: $jet, jetSerialNumber: $jetSerialNumber, POCName: $POCName, POCEmail: $POCEmail, POCPhoneNumber: $POCPhoneNumber, Notes: $Notes) {
+  mutation addShip($Ship: String!, $Model: String!, $HRN: String, $HIN: String!, $contactNumber: String!, $annualInspectionDate: String!, $fiveYearInspectionDate: String!, $sponsonSerialNumber: String!, $SRBSerialNumber: String!, $fuelTankSerialNumber: String!, $ZAPR356C2BVMXHookSerialNumber: String!, $engineMakeModel: String!, $engineSerialNumber: String!, $gear: String, $gearSerialNumber: String, $jet: String, $jetSerialNumber: String, $volvoQ0087: String, $POCName: String, $POCEmail: String, $POCPhoneNumber: String, $Notes: String) {
+    addShip(Ship: $Ship, Model: $Model, HRN: $HRN, HIN: $HIN, contactNumber: $contactNumber, annualInspectionDate: $annualInspectionDate, fiveYearInspectionDate: $fiveYearInspectionDate, sponsonSerialNumber: $sponsonSerialNumber, SRBSerialNumber: $SRBSerialNumber, fuelTankSerialNumber: $fuelTankSerialNumber, ZAPR356C2BVMXHookSerialNumber: $ZAPR356C2BVMXHookSerialNumber, engineMakeModel: $engineMakeModel, engineSerialNumber: $engineSerialNumber, gear: $gear, gearSerialNumber: $gearSerialNumber, jet: $jet, jetSerialNumber: $jetSerialNumber, volvoQ0087: $volvoQ0087, POCName: $POCName, POCEmail: $POCEmail, POCPhoneNumber: $POCPhoneNumber, Notes: $Notes) {
       ship {
         _id
         Ship
@@ -50,6 +50,7 @@ export const ADD_SHIP = gql`
         gearSerialNumber
         jet
         jetSerialNumber
+        volvoQ0087
         POCName
         POCEmail
         POCPhoneNumber
@@ -112,6 +113,7 @@ export const UPDATE_SHIP = gql`
     $gearSerialNumber: String!
     $jet: String!
     $jetSerialNumber: String!
+    $volvoQ0087: String!
     $POCName: String
     $POCEmail: String
     $POCPhoneNumber: String
@@ -136,6 +138,7 @@ export const UPDATE_SHIP = gql`
       gearSerialNumber: $gearSerialNumber
       jet: $jet
       jetSerialNumber: $jetSerialNumber
+      volvoQ0087: $volvoQ0087
       POCName: $POCName
       POCEmail: $POCEmail
       POCPhoneNumber: $POCPhoneNumber
@@ -159,6 +162,7 @@ export const UPDATE_SHIP = gql`
       gearSerialNumber
       jet
       jetSerialNumber
+      volvoQ0087
       POCName
       POCEmail
       POCPhoneNumber

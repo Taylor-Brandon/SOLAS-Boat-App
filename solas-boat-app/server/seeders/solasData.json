@@ -2537,7 +2537,8 @@
         "gearSerialNumber": "N/A",
         "jet": "N/A",
         "jetSerialNumber": "N/A",
-        "POCName":"volvoQ0087",
+        "volvoQ0087": "N/A",
+        "POCName":"N/A",
         "POCEmail": "N/A",
         "POCPhoneNumber": "N/A",
         "Notes": "N/A" 
