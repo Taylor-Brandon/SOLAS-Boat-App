@@ -43,6 +43,7 @@ const Results = () => {
                   <p>Gear Serial Number: {ship.gearSerialNumber}</p>
                   <p>Jet: {ship.jet}</p>
                   <p>Jet Serial Number: {ship.jetSerialNumber}</p>
+                  <p>VolvoQ0087: {ship.volvoQ0087}</p>
                   <p>POC Name: {ship.POCName}</p>
                   <p>POC Email: {ship.POCEmail}</p>
                   <p>POC Phone Number: {ship.POCPhoneNumber}</p>
