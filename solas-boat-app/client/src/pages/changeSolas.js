@@ -45,6 +45,7 @@ const ChangeShip = () => {
         gear: '',
         gearSerialNumber: '',
         jet: '',
+        jetSerialNumber: '',
         POCName: '',
         POCEmail: '',
         POCPhoneNumber: '',
@@ -73,6 +74,7 @@ const ChangeShip = () => {
                     gear: foundShip.gear,
                     gearSerialNumber: foundShip.gearSerialNumber,
                     jet: foundShip.jet,
+                    jetSerialNumber: foundShip.jetSerialNumber,
                     POCName: foundShip.POCName,
                     POCEmail: foundShip.POCEmail,
                     POCPhoneNumber: foundShip.POCPhoneNumber,
@@ -119,6 +121,7 @@ const ChangeShip = () => {
                     <p>Gear: {ship.gear}</p>
                     <p>Gear Serial Number: {ship.gearSerialNumber}</p>
                     <p> Jet: {ship.jet}</p>
+                    <p> Jet Serial Number: {ship.jetSerialNumber}</p>
                     <p>POC Name: {ship.POCName}</p>
                     <p>POC Email: {ship.POCEmail}</p>
                     <p>POC Phone Number: {ship.POCPhoneNumber}</p>
@@ -269,6 +272,15 @@ const ChangeShip = () => {
                         type="text"
                         name="jet"
                         value={formData.jet}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
+                    Jet Serial Number
+                    <input
+                        type="text"
+                        name="jetSerialNumber"
+                        value={formData.jetSerialNumber}
                         onChange={handleChange}
                     />
                 </label>
