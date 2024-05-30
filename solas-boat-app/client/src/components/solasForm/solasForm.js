@@ -268,10 +268,24 @@ const AddShip = () => {
                 name="jetSerialNumber"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="JetSerialNumber"
+                placeholder="Jet Serial Number"
               />
               <label htmlFor="jetSerialNumber" className="form-label">
                 Jet Serial Number
+              </label>
+              </div>
+
+              <div className="form-floating">
+              <input
+                className="form-control"
+                value={formState.volvoQ0087}
+                name="volvoQ0087"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="VolvoQ0087"
+              />
+              <label htmlFor="volvoQ0087" className="form-label">
+                VolvoQ0087
               </label>
               </div>
 
