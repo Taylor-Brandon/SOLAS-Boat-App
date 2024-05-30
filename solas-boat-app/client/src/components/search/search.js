@@ -31,7 +31,8 @@ const Search = () => {
       ship.gear.toLowerCase().includes(searchQuery.toLowerCase())||
       ship.gearSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())||
       ship.jet.toLowerCase().includes(searchQuery.toLowerCase())||
-      ship.jetSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())
+      ship.jetSerialNumber.toLowerCase().includes(searchQuery.toLowerCase())||
+      ship.volvoQ0087.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredShips(filteredShips);
   };
