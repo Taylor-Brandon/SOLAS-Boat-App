@@ -30,6 +30,7 @@ const typeDefs = gql`
     gearSerialNumber: String
     jet: String
     jetSerialNumber: String
+    volvoQ0087: String
     POCName: String
     POCEmail: String
     POCPhoneNumber: String
@@ -75,6 +76,7 @@ const typeDefs = gql`
       gearSerialNumber: String!
       jet: String!
       jetSerialNumber: String!
+      volvoQ0087: String!
       POCName: String!
       POCEmail: String!
       POCPhoneNumber: String!
@@ -109,6 +111,7 @@ const typeDefs = gql`
       gearSerialNumber: String
       jet: String
       jetSerialNumber: String
+      volvoQ0087: String
       POCName: String
       POCEmail: String
       POCPhoneNumber: String
