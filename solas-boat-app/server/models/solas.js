@@ -68,6 +68,10 @@ const shipSchema = new Schema({
         type: String,
         required: true
     },
+    volvoQ0087: {
+        type: String,
+        required: true
+    },
     POCName: { 
         type: String
     },
