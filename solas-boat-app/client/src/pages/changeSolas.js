@@ -285,6 +285,15 @@ const ChangeShip = () => {
                     />
                 </label>
                 <label>
+                    VolvoQ0087
+                    <input
+                        type="text"
+                        name="volvoQ0087"
+                        value={formData.volvoQ0087}
+                        onChange={handleChange}
+                    />
+                </label>
+                <label>
                     POC Name
                     <input
                         type="text"
